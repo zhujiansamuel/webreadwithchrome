@@ -64,3 +64,15 @@ def post_text_function(request):
 
     print(new_input.user,new_input.online_text)
     return HttpResponse(json.dumps(return_json), content_type='application/json')
+
+
+def showonlinetext(request):
+    alltexts = Learningtext.objects.filter(user=request.user)
+    context = {'alltexts': alltexts}
+    return render(request, 'student/onlinetextdisplay.html', context)
+
+def showonlinetextonhome(request):
+
+    alltexts = Learningtext.objects.filter(user=request.user)
+    context = {'alltexts': alltexts}
+    return render(request, 'onlinetext/onlinetextonhome.html', context)

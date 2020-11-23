@@ -47,7 +47,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom shadow-sm">
     <div class="container">
-      <a class="navbar-brand" href="{% url 'home' %}">StartUP</a>
+      <a class="navbar-brand" href="{% url 'home' %}">Lying DOWN Learning</a>
 
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -56,21 +56,26 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+      {% if user.is_authenticated %}
 
-        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'showonlinetextonhome' %}">My Knowledge</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'showonlinetextonhome' %}">My Test</a>
+          </li>
+
+        {% endif %}
+
           <li class="nav-item active">
             <a class="nav-link" href="{% url 'courses' %}">Courses </a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="{% url 'bloghome' %}">Blog</a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="{% url 'pricing' %}">Premium</a>
-          </li>
         </ul>
-
         <ul class="navbar-nav">
-
 
 
           {% if user.is_authenticated %}
@@ -88,8 +93,6 @@
       </li>
 
           {% else %}
-
-
 
           <li class="nav-item active">
             <!-- Button trigger modal -->
