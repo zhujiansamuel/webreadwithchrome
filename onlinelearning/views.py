@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 import json
 from django.contrib.auth import authenticate, logout
 from django.contrib.auth import login as auth_login
+from funtions import *
 from .models import Learningtext
 
 
@@ -43,13 +44,23 @@ def loginfromchrome(request):
 def post_text_function(request):
     #！！！这里需要根据发送规则修改
     #还没有修改！！！！！！
+    auth_key = request.POST.get('authkey')
     note_content = request.POST.get('content')
     note_urls = str(request.POST.get('texturls'))
     return_json = {'result': "getted"}
 
+    text_question = generate_key(16)
+    text_question_answer = generate_key(3)
 
 
+    post_student=StudentInfo.objects.get(AuthenticationKey=auth_key)
+    id_id=post_student.username_id
+    post_user = User.objects.get(id=id_id)
 
 
-    print(note_content," ===>== ",note_urls)
+    new_input = Learningtext(user=post_user,online_text=note_content,online_text_url=note_urls,text_question=text_question,text_question_answer=text_question_answer)
+    new_input.save()
+
+
+    print(new_input.user,new_input.online_text)
     return HttpResponse(json.dumps(return_json), content_type='application/json')

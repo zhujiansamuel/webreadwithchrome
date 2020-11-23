@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.utils.timezone import now
 # Create your models here.
 class Learningtext(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     online_text = models.TextField()
     online_text_url = models.TextField()
     online_text_expand_contest = models.TextField(default="no online_text_expand_contest")
