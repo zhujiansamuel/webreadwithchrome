@@ -44,6 +44,7 @@ def post_text_function(request):
     auth_key = request.POST.get('authkey')
     note_content = request.POST.get('content')
     note_urls = str(request.POST.get('texturls'))
+    note_date = request.POST.get('')
     return_json = {'result': "getted"}
 
     text_question = generate_key(16)
