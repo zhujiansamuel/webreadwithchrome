@@ -44,7 +44,7 @@ def post_text_function(request):
     auth_key = request.POST.get('authkey')
     note_content = request.POST.get('content')
     note_urls = str(request.POST.get('texturls'))
-    note_date = request.POST.get('')
+    note_date = request.POST.get('notedate')
     return_json = {'result': "getted"}
 
     text_question = generate_key(16)
@@ -56,7 +56,7 @@ def post_text_function(request):
     post_user = User.objects.get(id=id_id)
 
 
-    new_input = Learningtext(user=post_user,online_text=note_content,online_text_url=note_urls,text_question=text_question,text_question_answer=text_question_answer)
+    new_input = Learningtext(user=post_user,online_text=note_content,online_text_url=note_urls,text_question=text_question,text_question_answer=text_question_answer,online_text_date=note_date)
     new_input.save()
 
 
