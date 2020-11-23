@@ -6,23 +6,19 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
-  <title>{% block title %}{% endblock title %} - StartUP!</title>
+  <title>{% block title %}{% endblock title %} Lying DOWN Learning</title>
   {% block head %}
   {% endblock head %}
   <style>
     .showpassword {
       cursor: pointer;
     }
-
     .showpasswordsingup {
       cursor: pointer;
     }
-
     /*
  * Footer
  */
@@ -33,17 +29,14 @@
       background-color: #f9f9f9;
       border-top: .05rem solid #e5e5e5;
     }
-
     .blog-footer p:last-child {
       margin-bottom: 0;
     }
   </style>
 </head>
 
+
 <body>
-
-
-
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom shadow-sm">
     <div class="container">
@@ -80,7 +73,6 @@
 
           {% if user.is_authenticated %}
 
-
           <li class="nav-item dropdown active">
         <a class="nav-link dropdown-toggle" href="#" id="studentDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          <img src="https://img.icons8.com/color/24/000000/user-male-circle.png"/> {{ request.user|upper }}
@@ -103,6 +95,7 @@
             <button type="button" class="btn btn-success mx-1 my-1 btn-sm" data-toggle="modal"
               data-target="#singupModal">Ragister</button>
           </li>
+
           {% endif %}
 
 
@@ -111,8 +104,15 @@
       </div>
     </div>
   </nav>
+
+
+
+
+
   {% if user.is_authenticated %}
   {% else %}
+
+
 
 
   <!-- Login Modal -->
@@ -155,10 +155,6 @@
               </form>
 
 
-
-
-
-
             </div>
           </div>
         </div>
@@ -168,15 +164,6 @@
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
 
 
   <!-- Singup Modal -->
@@ -256,14 +243,16 @@
   {% block body %}
   {% endblock body %}
   <footer class="blog-footer">
-    <p>Made with ❤️ by <a href="https://twitter.com/yogeshnile">@YogeshNile</a></p>
+    <p>Made by <a href="#">@Samuel</a></p>
     <p>
       <a href="#">Back to top</a>
     </p>
   </footer>
 
   <!-- Optional JavaScript -->
-  {% if user.is_authenticated %}{% else %}
+  {% if user.is_authenticated %}
+  {% else %}
+
   <script type="text/javascript" src="{% static 'js/validation.js' %}"></script>
   {% endif %}
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
