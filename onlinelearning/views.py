@@ -15,20 +15,17 @@ from .models import Learningtext
 
 def loginfromchromevalidation(request):
     if request.method == 'POST':
-        username = request.POST['login_username']
-        loginpassword = request.POST['login_password']
-        user = authenticate(username=username, password=loginpassword)
-        if user is not None:
-            auth_login(request,user)
+        username = request.POST['login_username_home']
+        loginpassword = request.POST['login_password_home']
+        users = authenticate(username=username, password=loginpassword)
+        if users is not None:
+            auth_login(request, users)
             user_id = User.objects.get(username=username).id
             AuthenticationKey = StudentInfo.objects.get(username_id=user_id).AuthenticationKey
             contest = {
                 "username": username,
                 "AuthenticationKey": AuthenticationKey,
             }
-            #在这里还有返回一个信息告诉控件是谁登录了
-            #所以想到先返回一个"恭喜登录成功的页面"->发送用户信息->回到主页
-            print(contest)
             return render(request, 'successfulLoginFromChrome.html', {'data': contest})
         else:
             return render(request, 'login_chrome.html')
