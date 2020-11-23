@@ -5,7 +5,7 @@ from django.utils.timezone import now
 
 # Create your models here.
 class Learningtext(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     online_text = models.TextField()
     online_text_url = models.TextField()
     online_text_date = models.DateTimeField(default=now)
