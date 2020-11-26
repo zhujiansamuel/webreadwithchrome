@@ -8,6 +8,8 @@ urlpatterns = [
     path('login-from-chrome/sucessful', views.loginfromchromevalidation, name='loginfromchromevalidation'),
     path('showonlinetxt', views.showonlinetext, name="showonlinetext"),
     path('showonlinetxtonhome', views.showonlinetextonhome, name="showonlinetextonhome"),
+    path('quiz-generate', views.quizpage, name="quiz-page"),
+    path('quiz-generate/postquiz', views.testquizgenerator, name="quiz"),
 
 
 ]

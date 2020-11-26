@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+
+
+{% block title %}Quiz Generator{% endblock title %}
+
+
+{% block head %}
+{% endblock head %}
+
+{% block body %}
+
+<div class="container-fluid">
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <div class="row">
+            <div class="col-md-2"></div>
+                <div class="col-md-4">
+
+
+
+
+
+
+<form action="{% url 'quiz' %}" method="POST">
+    {% csrf_token %}
+
+    <div>
+        <textarea id="story" name="story" rows="5" cols="33">ウィキはウィキソフトウェア（ウィキエンジンとも呼ばれる）上で動作する。ウィキソフトウェアはコンテンツ管理システムの一種であるが、サイト所有者や特定のユーザーによってコンテンツが作られるわけではないという点において、ブログなど他のコンテンツ管理システムとは異なる。またウィキには固まったサイト構造というものはなく、サイトユーザーのニーズに沿って様々にサイト構造を作り上げることが可能であり、そうした点でも他のシステムとは異なっている。</textarea>
+
+        <textarea id="storyurls" name="storyurls" rows="1" cols="33">管理 コンテンツ</textarea>
+    </div>
+
+
+    <div>
+        <button type="submit" class="btn btn-primary" id="posttext">Post_text</button>
+    </div>
+
+</form>
+
+
+
+
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+{% endblock body %}
