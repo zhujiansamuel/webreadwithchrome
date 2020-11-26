@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Course Blogs by Startup{% endblock title %}
+
+{% block head %}
+{% endblock head %}
+
+{% block body %}
+{% load humanize %}
+
+
+{% if user.is_authenticated %}
+<div class="container my-4">
+    <h2>Question from Text</h2><br>
+                {% for quiz in question_quiz reversed %}
+                    <div class="card">
+                        <strong class="d-inline-block text-primary px-2">Upload at : 引用网站的标题（还没有写进去）</strong>
+                            <div class="card-body">
+                              <h5 class="card-title">Text : {{ quiz.textcontest.online_text }}</h5>
+                              <div class="mb-1 text-muted">Answer : {{ quiz.text_question_answer }}</div>
+                              <p class="card-text previews">Quesion : {{ quiz.text_question }}</p>
+                              <a class="btn btn-primary">Show Answer...</a>
+                            </div>
+                          </div><br>
+      {% endfor %}
+    {% else %}
+
+
+ {% endif %}
+</div>
+
+
+
+<script>
+  let previews = document.getElementsByClassName('previews');
+  Array.from(previews).forEach((element)=>{
+    element.innerHTML = element.innerText;
+  })
+</script>
+
+{% endblock body %}

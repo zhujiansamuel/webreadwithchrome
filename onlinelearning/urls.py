@@ -10,6 +10,6 @@ urlpatterns = [
     path('showonlinetxtonhome', views.showonlinetextonhome, name="showonlinetextonhome"),
     path('quiz-generate', views.quizpage, name="quiz-page"),
     path('quiz-generate/postquiz', views.testquizgenerator, name="quiz"),
-
+    path('quiz-generate/test', views.displayquiz, name="displayquiz"),
 
 ]

@@ -1,14 +1,14 @@
-from django.shortcuts import render
 from student.models import CourseSubscription, StudentInfo, PaymentProcess
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.models import User
-import json
 from django.contrib.auth import authenticate, logout
 from django.contrib.auth import login as auth_login
+
 from funtions import *
 from .models import Learningtext
+from .models import Quizgenerator
 
 
 # Create your views here.
@@ -30,42 +30,82 @@ def loginfromchromevalidation(request):
             return render(request, 'login_chrome.html')
     return redirect('home')
 
+
 def loginfromchrome(request):
     return render(request, 'login_chrome.html')
+
 
 #这里还没有保存到数据库
 @csrf_exempt
 def post_text_function(request):
     #！！！这里需要根据发送规则修改
-    #还没有修改！！！！！！
     auth_key = request.POST.get('authkey')
     note_content = request.POST.get('content')
     note_urls = str(request.POST.get('texturls'))
     note_date = request.POST.get('notedate')
+
+    note_language = request.POST.get('notelanguage')
+
+    #-----回调函数------
     return_json = {'result': "getted"}
 
-    text_question = generate_key(16)
-    text_question_answer = generate_key(3)
+    #--------------还没有写，也是用POST得，暂时给一个值------
+    note_expand_contest = note_content
+    #---------------------------------------------------
 
-    post_student=StudentInfo.objects.get(AuthenticationKey=auth_key)
-    id_id=post_student.username_id
+
+    post_student = StudentInfo.objects.get(AuthenticationKey=auth_key)
+    id_id = post_student.username_id
     post_user = User.objects.get(id=id_id)
 
-    new_input = Learningtext(user=post_user,online_text=note_content,online_text_url=note_urls,text_question=text_question,text_question_answer=text_question_answer,online_text_date=note_date)
+    new_input = Learningtext(user=post_user,
+                             online_text=note_content,
+                             online_text_url=note_urls,
+                             online_text_date=note_date,
+                             online_text_expand_contest=note_expand_contest)
     new_input.save()
 
-    print(new_input.user,new_input.online_text)
+
+    #-----------------------------------------
+    #------------下面要根据语言提问--------------
+    #-----------------------------------------
+    if note_language == "ja":
+        qa_generator = QAGeneration()
+        results = qa_generator.generate_QA(note_expand_contest)
+        textcontest = Learningtext.objects.get(online_text=note_content)
+        if results:
+            for text_question, text_question_answer in results:
+                new_question = Quizgenerator(user=post_user,
+                                             textcontest=textcontest,
+                                             text_question=text_question,
+                                             text_question_answer=text_question_answer)
+                new_question.save()
+
+    elif note_language == "en":
+        pass
+
+    else:
+        pass
+
+
+    #-----------------------------------------
+    #-----------------------------------------
+
     return HttpResponse(json.dumps(return_json), content_type='application/json')
+
+
 
 def showonlinetext(request):
     alltexts = Learningtext.objects.filter(user=request.user)
     context = {'alltexts': alltexts}
     return render(request, 'student/onlinetextdisplay.html', context)
 
+
 def showonlinetextonhome(request):
     alltexts = Learningtext.objects.filter(user=request.user)
     context = {'alltexts': alltexts}
     return render(request, 'onlinetext/onlinetextonhome.html', context)
+
 
 @csrf_exempt
 def testquizgenerator(request):
@@ -82,6 +122,12 @@ def testquizgenerator(request):
     contest = stem_key_list[0]
     return render(request, 'onlinetext/quizgenerate.html', contest)
 
+
 def quizpage(request):
     return render(request, 'onlinetext/quizgenerate.html')
 
+
+def displayquiz(request):
+    question_quiz = Quizgenerator.objects.filter(user=request.user)
+    contest = {"question_quiz": question_quiz}
+    return render(request, "onlinetext/displayquiz.html", contest)
