@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
 
-{% block title %}Course Blogs by Startup{% endblock title %}
+{% block title %}{% translate "OnlineText" %}{% endblock title %}
 
 {% block head %}
 {% endblock head %}
@@ -11,15 +13,15 @@
 
 {% if user.is_authenticated %}
 <div class="container my-4">
-    <h2>Noted text on-line</h2><br>
+    <h2>{% translate "Noted text on-line" %}</h2><br>
                 {% for text in alltexts reversed %}
                     <div class="card">
-                        <strong class="d-inline-block text-primary px-2">Upload at : {{ text.online_text_title }}</strong>
+                        <strong class="d-inline-block text-primary px-2">{% translate "Upload at" %} :  {{ text.online_text_title }}</strong>
                             <div class="card-body">
-                              <h5 class="card-title">OnlineText : {{ text.online_text| truncatechars:20 }}</h5>
-                              <div class="mb-1 text-muted">Date: {{ text.online_text_date }}</div>
+                              <h5 class="card-title">{% translate "OnlineText" %} : {{ text.online_text| truncatechars:10 }}</h5>
+                              <div class="mb-1 text-muted">{% translate "Date" %} : {{ text.online_text_date }}</div>
                               <p class="card-text previews">{{ text.online_text_expand_contest| truncatechars:200 }}</p>
-                              <a href="{{text.online_text_url}}" class="btn btn-primary">Go to webpage...</a>
+                              <a href="{{text.online_text_url}}" class="btn btn-primary">{% translate "Go to webpage..." %}</a>
                             </div>
                           </div><br>
       {% endfor %}
