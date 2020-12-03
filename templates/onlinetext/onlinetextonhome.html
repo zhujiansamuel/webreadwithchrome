@@ -14,10 +14,10 @@
     <h2>Noted text on-line</h2><br>
                 {% for text in alltexts reversed %}
                     <div class="card">
-                        <strong class="d-inline-block text-primary px-2">Upload at : 引用网站的标题（还没有写进去）</strong>
+                        <strong class="d-inline-block text-primary px-2">Upload at : {{ text.online_text_title }}</strong>
                             <div class="card-body">
-                              <h5 class="card-title">OnlineText : {{ text.online_text }}</h5>
-                              <div class="mb-1 text-muted">时间（也没有写进去）</div>
+                              <h5 class="card-title">OnlineText : {{ text.online_text| truncatechars:20 }}</h5>
+                              <div class="mb-1 text-muted">Date: {{ text.online_text_date }}</div>
                               <p class="card-text previews">{{ text.online_text_expand_contest| truncatechars:200 }}</p>
                               <a href="{{text.online_text_url}}" class="btn btn-primary">Go to webpage...</a>
                             </div>

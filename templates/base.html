@@ -10,8 +10,11 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <title>{% block title %}{% endblock title %} Lying DOWN Learning</title>
+
   {% block head %}
   {% endblock head %}
+
+
   <style>
     .showpassword {
       cursor: pointer;
@@ -33,6 +36,7 @@
       margin-bottom: 0;
     }
   </style>
+
 </head>
 
 
@@ -50,16 +54,15 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-      {% if user.is_authenticated %}
 
-          <li class="nav-item active">
-            <a class="nav-link" href="{% url 'showonlinetextonhome' %}">My Knowledge</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="{% url 'displayquiz' %}">My Test</a>
-          </li>
-
-        {% endif %}
+  {% if user.is_authenticated %}
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'showonlinetextonhome' %}">My Knowledge</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'displayquiz' %}">My Test</a>
+      </li>
+  {% endif %}
 
           <li class="nav-item active">
             <a class="nav-link" href="{% url 'courses' %}">Courses </a>
@@ -201,7 +204,7 @@
                 <div class="form-group">
                   <label for="mobile">Mobile No <b style="color: red;">*</b></label>
                   <input type="tel" name="mobileno" id="mobileno" class="form-control form-control-sm"
-                    placeholder="Enter Mobile No 9876543210" aria-describedby="phone" pattern="^\d{10}$" required>
+                    placeholder="Enter Mobile No 9876543210" aria-describedby="phone" pattern="^\d{11}$" required>
                 </div>
 
                 <div class="form-group">
@@ -253,7 +256,7 @@
   {% if user.is_authenticated %}
   {% else %}
 
-  <script type="text/javascript" src="{% static 'js/validation.js' %}"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/zhujiansamuel/static-webread@for-webread/bootstrap-grid.min.css"></script>
   {% endif %}
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
