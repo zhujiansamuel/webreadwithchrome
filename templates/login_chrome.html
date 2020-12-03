@@ -4,7 +4,7 @@
 
 
 
-{% block title %}Login from website{% endblock title %}
+{% block title %}{% translate "Back to top" %}Login from website{% endblock title %}
 
 
 {% block head %}
@@ -16,7 +16,7 @@
     <div class="container-fluid">
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Log-in</h1>
+                <h1 class="h2">{% translate "Log-in" %}</h1>
             </div>
             <div class="row">
                 <div class="col-md-2"></div>
@@ -25,14 +25,14 @@
                     <form action="{% url 'loginfromchromevalidation' %}" method="POST">
                         {% csrf_token %}
                         <div class="form-group">
-                            <label for="username">{% trans "Username" %} <b style="color: red;">*</b></label>
+                            <label for="username">{% translate "Username" %} <b style="color: red;">*</b></label>
                             <input type="" class="form-control form-control-sm currentpass" id="login_username_home" name="login_username_home" required>
                         </div>
                         <div class="form-group">
-                            <label for="Password">{% trans "Password" %} <b style="color: red;">*</b></label>
+                            <label for="Password">{% translate "Password" %} <b style="color: red;">*</b></label>
                             <input type="password" class="form-control form-control-sm password" id="login_password_home" name="login_password_home" required>
                         </div>
-                        <button type="submit" class="btn btn-primary" id="loginsubmit_home">Login</button>
+                        <button type="submit" class="btn btn-primary" id="loginsubmit_home">{% translate "Login" %}</button>
                     </form>
                 </div>
             </div>
@@ -40,5 +40,5 @@
     </div>
 </div>
     <div><p></p></div>
-<script src="{% static 'js/pass_validation.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/gh/zhujiansamuel/static-webread@for-webread/pass_validation.js"></script>
 {% endblock body %}

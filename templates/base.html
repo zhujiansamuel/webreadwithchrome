@@ -1,15 +1,23 @@
 <!doctype html>
 <html lang="en">
+{% load i18n %}
 {% load static %}
 
 <head>
-  <!-- Required meta tags -->
+
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Bootstrap CSS -->
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <title>{% block title %}{% endblock title %} Lying DOWN Learning</title>
+
+  <title>
+      {% block title %}{% endblock title %}
+      {% translate "-Lying DOWN Learning" %}
+  </title>
+
+
 
   {% block head %}
   {% endblock head %}
@@ -22,9 +30,6 @@
     .showpasswordsingup {
       cursor: pointer;
     }
-    /*
- * Footer
- */
     .blog-footer {
       padding: 2.5rem 0;
       color: #999;
@@ -37,6 +42,7 @@
     }
   </style>
 
+
 </head>
 
 
@@ -44,7 +50,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom shadow-sm">
     <div class="container">
-      <a class="navbar-brand" href="{% url 'home' %}">Lying DOWN Learning</a>
+      <a class="navbar-brand" href="{% url 'home' %}">{% translate "Lying DOWN Learning" %}</a>
 
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -55,52 +61,48 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
 
-  {% if user.is_authenticated %}
-      <li class="nav-item active">
-        <a class="nav-link" href="{% url 'showonlinetextonhome' %}">My Knowledge</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="{% url 'displayquiz' %}">My Test</a>
-      </li>
-  {% endif %}
 
+      {% if user.is_authenticated %}
           <li class="nav-item active">
-            <a class="nav-link" href="{% url 'courses' %}">Courses </a>
+            <a class="nav-link" href="{% url 'showonlinetextonhome' %}">{% translate "My Knowledge" %}</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="{% url 'bloghome' %}">Blog</a>
+            <a class="nav-link" href="{% url 'showonlinetextonhome' %}">{% translate "My Test" %}</a>
           </li>
+      {% endif %}
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'courses' %}">{% translate "Courses" %}</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'bloghome' %}">{% translate "Blog" %}</a>
+          </li>
+
         </ul>
+
         <ul class="navbar-nav">
-
-
-          {% if user.is_authenticated %}
-
+      {% if user.is_authenticated %}
           <li class="nav-item dropdown active">
-        <a class="nav-link dropdown-toggle" href="#" id="studentDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         <img src="https://img.icons8.com/color/24/000000/user-male-circle.png"/> {{ request.user|upper }}
-        </a>
-        <div class="dropdown-menu" aria-labelledby="studentDropdown">
-          <a class="dropdown-item" href="{% url 'info' %}">User Account</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="{% url 'handlelogout' %}">Logout</a>
-        </div>
-      </li>
+            <a class="nav-link dropdown-toggle" href="#" id="studentDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
-          {% else %}
+                <img src="https://img.icons8.com/color/24/000000/user-male-circle.png"/> {{ request.user|upper }}
 
+            </a>
+            <div class="dropdown-menu" aria-labelledby="studentDropdown">
+              <a class="dropdown-item" href="{% url 'info' %}">{% translate "User Account" %}</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'handlelogout' %}">{% translate "Logout" %}</a>
+            </div>
+          </li>
+
+      {% else %}
           <li class="nav-item active">
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-outline-success mx-2 my-1 btn-sm" data-toggle="modal"
-              data-target="#loginModal">Login</button>
+            <button type="button" class="btn btn-outline-success mx-2 my-1 btn-sm" data-toggle="modal" data-target="#loginModal">{% translate "Login" %}</button>
           </li>
           <li class="nav-item">
-            <button type="button" class="btn btn-success mx-1 my-1 btn-sm" data-toggle="modal"
-              data-target="#singupModal">Ragister</button>
+            <button type="button" class="btn btn-success mx-1 my-1 btn-sm" data-toggle="modal" data-target="#singupModal">{% translate "Ragister" %}</button>
           </li>
-
           {% endif %}
-
 
 
         </ul>
@@ -123,7 +125,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <h5 class="modal-title" id="loginModalLabel">{% translate "Login" %}</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -132,7 +134,7 @@
           <div class="card">
             <div class="card-body">
               <center>
-                <h4 class="card-title">Login</h4>
+                <h4 class="card-title">{% translate "Login" %}</h4>
               </center>
 
 
@@ -140,21 +142,18 @@
               <form action="{% url 'handlelogin' %}" method="post" autocomplete="off">
                 {% csrf_token %}
                 <div class="form-group">
-                  <label for="username">Username <b style="color: #ff0000;">*</b></label>
-                  <input type="text" name="login_username" id="login_username" class="form-control form-control-sm"
-                    placeholder="Enter Username" aria-describedby="helpIdusername" required>
+                  <label for="username">{% translate "Username" %} <b style="color: #ff0000;">*</b></label>
+                  <input type="text" name="login_username" id="login_username" class="form-control form-control-sm" placeholder="{% translate "Enter Username" %}" aria-describedby="helpIdusername" required>
                   <div id="helpIdusername" class="text-muted login-key-error-username" style="display: none;">
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="password">Password <b style="color: red;">*</b></label>
-                  <input type="password" name="login_password" id="login_password"
-                    class="form-control form-control-sm passwordshow" placeholder="Enter Password"
-                    aria-describedby="password" required>
+                  <label for="password">{% translate "Password" %} <b style="color: red;">*</b></label>
+                  <input type="password" name="login_password" id="login_password" class="form-control form-control-sm passwordshow" placeholder="{% translate "Enter Password" %}" aria-describedby="password" required>
                   <small class="float-right showpassword">SHOW</small>
                 </div>
-                <input type="submit" class="btn btn-primary" value="Login" id="loginsubmit">
+                <input type="submit" class="btn btn-primary" value="{% translate "Login" %}" id="loginsubmit">
               </form>
 
 
@@ -162,7 +161,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">{% translate "Close" %}</button>
         </div>
       </div>
     </div>
@@ -174,7 +173,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="singupModalLabel">Ragister</h5>
+          <h5 class="modal-title" id="singupModalLabel">{% translate "Ragister" %}</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -183,60 +182,54 @@
           <div class="card">
             <div class="card-body">
               <center>
-                <h4 class="card-title">Ragister</h4>
+                <h4 class="card-title">{% translate "Ragister" %}</h4>
               </center>
               <form action="{% url 'handleSignup' %}" method="post" autocomplete="off">
                 {% csrf_token %}
                 <div class="form-group">
-                  <label for="username">Username <b style="color: red;">*</b></label>
-                  <input type="text" name="username" id="username" class="form-control form-control-sm"
-                    placeholder="Enter Username" aria-describedby="helpIdusername" required>
+                  <label for="username">{% translate "Username" %} <b style="color: red;">*</b></label>
+                  <input type="text" name="username" id="username" class="form-control form-control-sm" placeholder="{% translate "Enter Username" %}" aria-describedby="helpIdusername" required>
                   <div id="helpIdusername" class="text-muted key-error-username" style="display: none;"></div>
                 </div>
 
                 <div class="form-group">
-                  <label for="emailid">Email <b style="color: red;">*</b></label>
-                  <input type="email" name="emailid" id="emailid" class="form-control form-control-sm"
-                    placeholder="Enter Email" aria-describedby="email" required>
+                  <label for="emailid">{% translate "Email" %} <b style="color: red;">*</b></label>
+                  <input type="email" name="emailid" id="emailid" class="form-control form-control-sm" placeholder="{% translate "Enter Email" %}" aria-describedby="email" required>
                   <div id="helpIdemail" class="text-muted key-error-email" style="display: none;"></div>
                 </div>
 
                 <div class="form-group">
-                  <label for="mobile">Mobile No <b style="color: red;">*</b></label>
-                  <input type="tel" name="mobileno" id="mobileno" class="form-control form-control-sm"
-                    placeholder="Enter Mobile No 9876543210" aria-describedby="phone" pattern="^\d{11}$" required>
+                  <label for="mobile">{% translate "Mobile No" %} <b style="color: red;">*</b></label>
+                  <input type="tel" name="mobileno" id="mobileno" class="form-control form-control-sm" placeholder="{% translate "Enter Mobile No 09876543210" %}" aria-describedby="phone" pattern="^\d{11}$" required>
                 </div>
 
                 <div class="form-group">
-                  <label for="dob">Date of Birth <b style="color: red;">*</b></label>
-                  <input type="date" name="dob" id="dob" class="form-control form-control-sm"
-                    placeholder="Enter Date of Birth" aria-describedby="dob" required>
+                  <label for="dob">{% translate "Date of Birth" %} <b style="color: red;">*</b></label>
+                  <input type="date" name="dob" id="dob" class="form-control form-control-sm" placeholder="{% translate "Enter Date of Birth" %}" aria-describedby="dob" required>
                 </div>
 
                 <div class="form-group">
-                  <label for="address">Address <b style="color: red;">*</b></label>
-                  <input type="text" name="address" id="address" class="form-control form-control-sm"
-                    placeholder="Enter Full Address" aria-describedby="address" required>
+                  <label for="address">{% translate "Address" %} <b style="color: red;">*</b></label>
+                  <input type="text" name="address" id="address" class="form-control form-control-sm" placeholder="{% translate "Enter Full Address" %}" aria-describedby="address" required>
                 </div>
 
                 <div class="form-group">
-                  <label for="password">Password <b style="color: red;">*</b></label>
-                  <input type="password" name="password" id="password"
-                    class="form-control form-control-sm passwordshowsingup" placeholder="Enter Password"
+                  <label for="password">{% translate "Welcome" %}Password <b style="color: red;">*</b></label>
+                  <input type="password" name="password" id="password" class="form-control form-control-sm passwordshowsingup" placeholder="{% translate "Enter Password" %}"
                     aria-describedby="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                   <small class="float-right showpasswordsingup">SHOW</small>
-                  <small>Password must contain the following:</small>
-                  <small><b>lowercase</b>, </small>
-                  <small><b>capital (uppercase)</b>, </small>
-                  <small><b>number</b></small>
+                  <small>{% translate "Password must contain the following:" %}</small>
+                  <small><b>{% translate "lowercase, " %}</b></small>
+                  <small><b>{% translate "capital (uppercase), " %}</b></small>
+                  <small><b>{% translate "number" %}</b></small>
                 </div>
-                <input type="submit" class="btn btn-primary" value="Ragister" id="registersubmit">
+                <input type="submit" class="btn btn-primary" value="{% translate "Ragister" %}" id="registersubmit">
               </form>
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">{% translate "Close" %}</button>
         </div>
       </div>
     </div>
@@ -248,7 +241,7 @@
   <footer class="blog-footer">
     <p>Made by <a href="#">@Samuel</a></p>
     <p>
-      <a href="#">Back to top</a>
+      <a href="#">{% translate "Back to top" %}</a>
     </p>
   </footer>
 
@@ -256,8 +249,9 @@
   {% if user.is_authenticated %}
   {% else %}
 
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/zhujiansamuel/static-webread@for-webread/bootstrap-grid.min.css"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/zhujiansamuel/static-webread@for-webread/validation.js"></script>
   {% endif %}
+
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

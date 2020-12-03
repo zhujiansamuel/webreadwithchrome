@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Page Not Found {% endblock title %}
+{% block title %}{% translate "Back to top" %}Page Not Found {% endblock title %}
 
 {% block head %}
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;900&display=swap" rel="stylesheet">
@@ -67,8 +67,7 @@
         <div class="err">4</div>
         <i class="far fa-question-circle fa-spin"></i>
         <div class="err2">4</div>
-        <div class="msg">Maybe this page moved? Got deleted? Is hiding out in quarantine? Never existed in the first
-            place?<p>Let's go <a class="home-link" href="{% url 'home' %}">home</a> and try from there.</p>
+        <div class="msg">{% translate "Maybe this page moved? Got deleted? Is hiding out in quarantine? Never existed in the first place?" %}<p>{% translate "Let's go" %} <a class="home-link" href="{% url 'home' %}">{% translate "home" %}</a> {% translate "and try from there." %}</p>
         </div>
     </div>
 </div>

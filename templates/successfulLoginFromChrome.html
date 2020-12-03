@@ -2,22 +2,22 @@
 {% load i18n %}
 {% load static %}
 
+{% block title %}{% translate "Login from website" %}{% endblock title %}
 
 
-{% block title %}Login from website{% endblock title %}
 
 
 {% block head %}
 {% endblock head %}
 
+
+
+
+
 {% block body %}
-
-
 <center>
     <h1></h1>
-
-    <h1>Welcome  <span id="nameformessage">{{ request.user }}</span></h1>
-
+    <h1>{% translate "Welcome" %}<span id="nameformessage">{{ request.user }}</span></h1>
     <h1></h1>
 </center>
 
@@ -26,7 +26,6 @@
     var UserAuthenticationKey = datafromdjango.AuthenticationKey;
     var Username = datafromdjango.username;
 </script>
-<script type="text/javascript" src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/page.js' %}"></script>
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/zhujiansamuel/static-webread@for-webread/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/zhujiansamuel/static-webread@for-webread/page.js"></script>
 {% endblock body %}
