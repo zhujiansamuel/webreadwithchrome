@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
-{% block title %} {{ request.user }} - Student Dashboard {% endblock title %}
+{% block title %} {{ request.user }}{% translate " -Student Dashboard " %} {% endblock title %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zhujiansamuel/static-webread@for-webread/dashboard.css">
 {% endblock head %}
 {% block body %}
 <div class="container-fluid">
@@ -14,25 +15,29 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="{% url 'info' %}">
                             <img src="https://img.icons8.com/pastel-glyph/24/000000/user-male.png" />
-                            Profile
+                            {% translate "Profile" %}
                         </a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'ChangePassword' %}">
                             <img src="https://img.icons8.com/ios/24/000000/password-window.png" />
-                            Change Password
+                            {% translate "Change Password" %}
                         </a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'UserCourse' %}">
                             <img src="https://img.icons8.com/wired/24/000000/singing-teacher.png" />
-                            Your Courses
+                            {% translate "Your Courses" %}
                         </a>
                     </li>
+
                     <li class="nav-item">
+                        <!--加上 active 后变为高亮-->
                         <a class="nav-link" href="{% url 'showonlinetext' %}">
                             <img src="https://img.icons8.com/wired/24/000000/singing-teacher.png" />
-                            Your OnlineText
+                            {% translate "Your OnlineText" %}
                         </a>
                     </li>
                 </ul>
@@ -42,11 +47,11 @@
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div
                 class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Dashboard</h1>
+                <h1 class="h2">{% translate "Dashboard" %}</h1>
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="btn-group mr-2">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">{% translate "Share" %}</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">{% translate "Export" %}</button>
                     </div>
                     <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -57,7 +62,7 @@
                             <line x1="8" y1="2" x2="8" y2="6"></line>
                             <line x1="3" y1="10" x2="21" y2="10"></line>
                         </svg>
-                        This week
+                        {% translate "This week" %}
                     </button>
                 </div>
             </div>

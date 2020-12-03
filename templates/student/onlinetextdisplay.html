@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
-{% block title %} Your OnlineText - {{ request.user }} - Student Dashboard {% endblock title %}
+{% block title %} {% translate "Your OnlineText - " %}{{ request.user }} {% translate "- Student Dashboard" %} {% endblock title %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zhujiansamuel/static-webread@for-webread/dashboard.css">
 {% endblock head %}
 
 
@@ -19,21 +20,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'info' %}">
                             <img src="https://img.icons8.com/pastel-glyph/24/000000/user-male.png" />
-                            Profile
+                            {% translate "Profile" %}
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'ChangePassword' %}">
                             <img src="https://img.icons8.com/ios/24/000000/password-window.png" />
-                            Change Password
+                            {% translate "Change Password" %}
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'UserCourse' %}">
                             <img src="https://img.icons8.com/wired/24/000000/singing-teacher.png" />
-                            Your Courses
+                            {% translate "Your Courses" %}
                         </a>
                     </li>
 
@@ -41,7 +42,7 @@
                         <!--加上 active 后变为高亮-->
                         <a class="nav-link active" href="{% url 'showonlinetext' %}">
                             <img src="https://img.icons8.com/wired/24/000000/singing-teacher.png" />
-                            Your OnlineText
+                            {% translate "Your OnlineText" %}
                         </a>
                     </li>
                 </ul>
@@ -49,36 +50,27 @@
         </nav>
 
 
-
-
-
-
-
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div
                 class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Your OnlineText</h1>
+                <h1 class="h2">{% translate "Your OnlineText" %}</h1>
             </div>
             <div class="row">
-
-
-
 
                 <!--这里开始写-->
                 {% for text in alltexts reversed %}
                     <div class="card">
-                        <strong class="d-inline-block text-primary px-2">Upload at : 引用网站的标题（还没有写进去）</strong>
+                        <strong class="d-inline-block text-primary px-2">{% translate "Upload at" %} : {{ text.online_text_title }}</strong>
                             <div class="card-body">
-                              <h5 class="card-title">OnlineText : {{ text.online_text }}</h5>
-                              <div class="mb-1 text-muted">时间（也没有写进去）</div>
+                              <h5 class="card-title">{% translate "OnlineText" %} : {{ text.online_text| truncatechars:10 }}</h5>
+                              <div class="mb-1 text-muted">{% translate "Date" %}:{{ text.online_text_date }}</div>
                               <p class="card-text previews">{{ text.online_text_expand_contest| truncatechars:200 }}</p>
-                              <a href="{{text.online_text_url}}" class="btn btn-primary">Go to webpage...</a>
+                              <a href="{{text.online_text_url}}" class="btn btn-primary">{% translate "Go to webpage..." %}</a>
                             </div>
                           </div><br>
 
                 {% endfor %}
                     </div>
-
 
 
             </div>

@@ -1,61 +1,46 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
-{% block title %} Your Subscription Courses - {{ request.user }} - Student Dashboard {% endblock title %}
+{% block title %} {% translate "Your Subscription Courses -" %} {{ request.user }} {% translate " -Student Dashboard " %}{% endblock title %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zhujiansamuel/static-webread@for-webread/dashboard.css">
 {% endblock head %}
 
 
-
 {% block body %}
-
-
-
-
-
 <div class="container-fluid">
     <div class="row">
-
-
 
         <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
             <div class="sidebar-sticky pt-3">
                 <ul class="nav flex-column">
 
-
-
-
-
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'info' %}">
                             <img src="https://img.icons8.com/pastel-glyph/24/000000/user-male.png" />
-                            Profile
+                            {% translate "Profile" %}
                         </a>
                     </li>
-
-
-
-
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'ChangePassword' %}">
                             <img src="https://img.icons8.com/ios/24/000000/password-window.png" />
-                            Change Password
+                            {% translate "Change Password" %}
                         </a>
                     </li>
-
-
-
-
-
                     <li class="nav-item">
                         <a class="nav-link active" href="{% url 'UserCourse' %}">
                             <img src="https://img.icons8.com/wired/24/000000/singing-teacher.png" />
-                            Your Courses
+                            {% translate "Your Courses" %}
                         </a>
                     </li>
-
-
+                    <li class="nav-item">
+                        <!--加上 active 后变为高亮-->
+                        <a class="nav-link" href="{% url 'showonlinetext' %}">
+                            <img src="https://img.icons8.com/wired/24/000000/singing-teacher.png" />
+                            {% translate "Your OnlineText" %}
+                        </a>
+                    </li>
 
 
                 </ul>
@@ -63,15 +48,10 @@
         </nav>
 
 
-
-
-
-
-
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div
                 class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Your Courses</h1>
+                <h1 class="h2">{% translate "Your Courses" %}</h1>
             </div>
             <div class="row">
 
@@ -83,12 +63,12 @@
                             <h5 class="card-title">{{ ucourse.course.title }}</h5>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><img src="https://img.icons8.com/metro/20/000000/in-progress.png"/> Progress 
+                            <li class="list-group-item"><img src="https://img.icons8.com/metro/20/000000/in-progress.png"/> {% translate "Progress" %}
                                 <span class="badge badge-danger">{{ ucourse.progress }}</span></li>
                         </ul>
                         <div class="card-body">
                             <center>
-                                <a href="{% url 'course_detail' ucourse.course.course_slug %}" class="btn btn-info py-2 my-1">Continue to Learn</a>
+                                <a href="{% url 'course_detail' ucourse.course.course_slug %}" class="btn btn-info py-2 my-1">{% translate "Continue to Learn" %}</a>
                             </center>
                         </div>
                     </div>
