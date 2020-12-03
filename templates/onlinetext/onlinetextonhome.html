@@ -12,29 +12,43 @@
 
 
 {% if user.is_authenticated %}
-<div class="container my-4">
-    <h2>{% translate "Noted text on-line" %}</h2><br>
-                {% for text in alltexts reversed %}
-                    <div class="card">
-                        <strong class="d-inline-block text-primary px-2">{% translate "Upload at" %} :  {{ text.online_text_title }}</strong>
-                            <div class="card-body">
-                              <h5 class="card-title">{% translate "OnlineText" %} : {{ text.online_text| truncatechars:10 }}</h5>
-                              <div class="mb-1 text-muted">{% translate "Date" %} : {{ text.online_text_date }}</div>
-                              <p class="card-text previews">{{ text.online_text_expand_contest| truncatechars:200 }}</p>
-                              <a href="{{text.online_text_url}}" class="btn btn-primary">{% translate "Go to webpage..." %}</a>
-                            </div>
-                          </div><br>
-      {% endfor %}
-    {% else %}
+
+
+    <form action="{% url 'loginfromchromevalidation' %}" method="POST">
+        {% csrf_token %}
+        <div class="container my-4">
+            <input class="form-control form-control-lg" type="text" placeholder="{% translate "Title..." %}" />
+            <input class="form-control form-control-lg" type="text" placeholder="{% translate "Url..." %}" />
+        </div>
+        <div>
+            <textarea id="story" name="story" rows="5" cols="40">{% translate "Please enter the text to be recorded." %}</textarea>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary" id="savetext">{% translate "Save" %}</button>
+
+        </div>
+    </form>
 
 
 
+    <div class="container my-4">
+        <h2>{% translate "Noted text on-line" %}</h2><br>
+            {% for text in alltexts reversed %}
+                <div class="card">
+                    <strong class="d-inline-block text-primary px-2">{% translate "Upload at" %} :  {{ text.online_text_title }}</strong>
+                        <div class="card-body">
+                          <h5 class="card-title">{% translate "OnlineText" %} : {{ text.online_text| truncatechars:10 }}</h5>
+                          <div class="mb-1 text-muted">{% translate "Date" %} : {{ text.online_text_date }}</div>
+                          <p class="card-text previews">{{ text.online_text_expand_contest| truncatechars:200 }}</p>
+                          <a href="{{text.online_text_url}}" class="btn btn-primary">{% translate "Go to webpage..." %}</a>
+                        </div>
+                      </div><br>
+            {% endfor %}
 
 
+{% else %}
+{% endif %}
 
-
-
- {% endif %}
 </div>
 
 
