@@ -41,3 +41,4 @@ pythonenv*
 # End of https://www.toptal.com/developers/gitignore/api/django
 
 idea.md
+.DS_Store
