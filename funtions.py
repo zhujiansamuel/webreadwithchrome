@@ -1,14 +1,13 @@
 import string, random
 import nltk
 import MeCab
-import random
 
 import CaboCha
 import xmltodict
 from operator import itemgetter
 
 import pandas as pd
-from IPython.display import Markdown, display, clear_output
+
 import _pickle as cPickle
 from pathlib import Path
 import spacy

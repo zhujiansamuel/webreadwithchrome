@@ -8,7 +8,7 @@ from django.contrib.auth import login as auth_login
 from django.utils import timezone
 
 import json
-#from funtions import *
+from funtions import *
 from .models import Learningtext
 from .models import Quizgenerator
 
@@ -54,6 +54,40 @@ def save_text_function(request):
                              online_text_title=note_title,
                              online_text_language=note_language)
     new_input.save()
+    #-----------------------------------------
+    #------------下面要根据语言提问----1205-----
+    #-----------------------------------------
+    if note_language == "ja":
+        #这里产生一个问答，而非填空问题，有一种填空问题的产生方法，但是需要自动产生keyword
+        #参考testquizgenerator函数的工作
+        qa_generator = QAGeneration()
+        results = qa_generator.generate_QA(note_expand_contest)
+        textcontest = Learningtext.objects.get(online_text=note_content)
+        if results:
+            for text_question, text_question_answer in results:
+                new_question = Quizgenerator(user=post_user,
+                                             textcontest=textcontest,
+                                             text_question=text_question,
+                                             text_question_answer=text_question_answer,
+                                             text_question_type="5W1H")
+                new_question.save()
+    elif note_language == "en":
+        textcontest = Learningtext.objects.get(online_text=note_content)
+        questions = generateQuestions(note_expand_contest, 5)
+        if questions:
+            for question in questions:
+                new_question = Quizgenerator(user=post_user,
+                                             textcontest=textcontest,
+                                             text_question=question["question"],
+                                             text_question_answer=question["answer"],
+                                             text_question_type="CLOZE")
+                new_question.save()
+    else:
+        #这里可能写入别的语言
+        pass
+
+
+
 
 @csrf_exempt
 def post_text_function(request):
@@ -81,7 +115,40 @@ def post_text_function(request):
                              online_text_title=note_title,
                              online_text_language=note_language)
     new_input.save()
+    #-----------------------------------------
+    #------------下面要根据语言提问-----1205-----
+    #-----------------------------------------
+    if note_language == "ja":
+        #这里产生一个问答，而非填空问题，有一种填空问题的产生方法，但是需要自动产生keyword
+        #参考testquizgenerator函数的工作
+        qa_generator = QAGeneration()
+        results = qa_generator.generate_QA(note_expand_contest)
+        textcontest = Learningtext.objects.get(online_text=note_content)
+        if results:
+            for text_question, text_question_answer in results:
+                new_question = Quizgenerator(user=post_user,
+                                             textcontest=textcontest,
+                                             text_question=text_question,
+                                             text_question_answer=text_question_answer,
+                                             text_question_type="5W1H")
+                new_question.save()
+    elif note_language == "en":
+        textcontest = Learningtext.objects.get(online_text=note_content)
+        questions = generateQuestions(note_expand_contest, 5)
+        if questions:
+            for question in questions:
+                new_question = Quizgenerator(user=post_user,
+                                             textcontest=textcontest,
+                                             text_question=question["question"],
+                                             text_question_answer=question["answer"],
+                                             text_question_type="CLOZE")
+                new_question.save()
+    else:
+        #这里可能写入别的语言
+        pass
     return HttpResponse(json.dumps(return_json), content_type='application/json')
+
+
 
 def showonlinetext(request):
     alltexts = Learningtext.objects.filter(user=request.user)
