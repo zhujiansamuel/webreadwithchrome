@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+
+{% block title %}{% translate "Lying DOWN Learning" %} {{ onlinetext.online_text_title }}{% endblock title %}
+
+{% block body %}
+{% load humanize %}
+{% load extras %}
+
+
+<div class="container my-4">
+    <div class="blog-post">
+        <h2 class="blog-post-title">{{ onlinetext.online_text_title }}</h2>
+        <p class="blog-post-meta">{{ onlinetext.online_text_date }}</p>
+        <hr>
+        <p>{{ onlinetext.online_text | safe }}</p>
+    </div>
+    <hr>
+</div>
+
+<div class="container">
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>{{ message.tags }}</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
+
+<div class="container">
+    <h2>{% translate "Study notes" %}: ({{ comment.count }})</h2>
+
+
+    <form action="{% url 'onlinetextcomment' %}" method="POST">
+        {% csrf_token %}
+        <div class="container my-4">
+            <input type="hidden" name="onlinetextSno" id="onlinetextSno" value="{{ onlinetext.id }}">
+            <input name="onlinetextstudynote" class="form-control form-control-lg" type="text" placeholder="{% translate "Title..." %}" /><br>
+        </div>
+
+        <div class="container my-4">
+            <button type="submit" class="btn btn-primary" id="savestudynote">{% translate "Save" %}</button>
+        </div>
+    </form>
+
+
+    {% for comment in comment %}
+    <div class="row my-3">
+        <div class="col-md-1"><img src="https://img.icons8.com/doodle/50/000000/user-male.png" /></div>
+        <div class="col-md-11">
+            <span class="badge badge-secondary">
+                {{ comment.learnnote_date  | naturaltime }}
+            </span>
+            <div> {{ comment.learnnote}}</div>
+        </div>
+    </div>
+    {% endfor %}
+
+
+</div>
+{% endblock body %}

@@ -6,11 +6,12 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, logout
 from django.contrib.auth import login as auth_login
 from django.utils import timezone
+from django.contrib import messages
 
 import json
 from funtions import *
-from .models import Learningtext
-from .models import Quizgenerator
+from .models import *
+
 
 
 # Create your views here.
@@ -58,19 +59,25 @@ def save_text_function(request):
     #------------下面要根据语言提问----1205-----
     #-----------------------------------------
     if note_language == "ja":
-        #这里产生一个问答，而非填空问题，有一种填空问题的产生方法，但是需要自动产生keyword
-        #参考testquizgenerator函数的工作
-        qa_generator = QAGeneration()
-        results = qa_generator.generate_QA(note_expand_contest)
+        rake = Rake()
+        story_key = rake.get_keywords(note_expand_contest,3)
+        story_text = note_expand_contest
+
+        parsedoc = ParseDocument(story_text, story_key)
         textcontest = Learningtext.objects.get(online_text=note_content)
-        if results:
-            for text_question, text_question_answer in results:
-                new_question = Quizgenerator(user=post_user,
-                                             textcontest=textcontest,
-                                             text_question=text_question,
-                                             text_question_answer=text_question_answer,
-                                             text_question_type="5W1H")
-                new_question.save()
+
+        parsed_sentences = parsedoc.doc_to_sentences_ja()
+        quiz_stem = parsedoc.sentence_select_ja(parsed_sentences)
+        stem_key_list = parsedoc.stem_key_select(quiz_stem)
+        if stem_key_list:
+            for stem_key in stem_key_list:
+                    new_question = Quizgenerator(user=post_user,
+                                                 textcontest=textcontest,
+                                                 text_question=stem_key["stem"],
+                                                 text_question_answer=stem_key["correct_key"],
+                                                 text_question_type="CLOZE")
+                    new_question.save()
+
     elif note_language == "en":
         textcontest = Learningtext.objects.get(online_text=note_content)
         questions = generateQuestions(note_expand_contest, 5)
@@ -85,12 +92,13 @@ def save_text_function(request):
     else:
         #这里可能写入别的语言
         pass
-
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
 
 @csrf_exempt
 def post_text_function(request):
+
     #！！！这里需要根据发送规则修改
     auth_key = request.POST.get('authkey')
     note_content = request.POST.get('content')
@@ -119,19 +127,25 @@ def post_text_function(request):
     #------------下面要根据语言提问-----1205-----
     #-----------------------------------------
     if note_language == "ja":
-        #这里产生一个问答，而非填空问题，有一种填空问题的产生方法，但是需要自动产生keyword
-        #参考testquizgenerator函数的工作
-        qa_generator = QAGeneration()
-        results = qa_generator.generate_QA(note_expand_contest)
+        rake = Rake()
+        story_key = rake.get_keywords(note_expand_contest,3)
+        story_text = note_expand_contest
+
+        parsedoc = ParseDocument(story_text, story_key)
         textcontest = Learningtext.objects.get(online_text=note_content)
-        if results:
-            for text_question, text_question_answer in results:
-                new_question = Quizgenerator(user=post_user,
-                                             textcontest=textcontest,
-                                             text_question=text_question,
-                                             text_question_answer=text_question_answer,
-                                             text_question_type="5W1H")
-                new_question.save()
+
+        parsed_sentences = parsedoc.doc_to_sentences_ja()
+        quiz_stem = parsedoc.sentence_select_ja(parsed_sentences)
+        stem_key_list = parsedoc.stem_key_select(quiz_stem)
+        if stem_key_list:
+            for stem_key in stem_key_list:
+                    new_question = Quizgenerator(user=post_user,
+                                                 textcontest=textcontest,
+                                                 text_question=stem_key["stem"],
+                                                 text_question_answer=stem_key["correct_key"],
+                                                 text_question_type="CLOZE")
+                    new_question.save()
+
     elif note_language == "en":
         textcontest = Learningtext.objects.get(online_text=note_content)
         questions = generateQuestions(note_expand_contest, 5)
@@ -150,6 +164,10 @@ def post_text_function(request):
 
 
 
+
+
+
+
 def showonlinetext(request):
     alltexts = Learningtext.objects.filter(user=request.user)
     context = {'alltexts': alltexts}
@@ -160,22 +178,21 @@ def showonlinetextonhome(request):
     context = {'alltexts': alltexts}
     return render(request, 'onlinetext/onlinetextonhome.html', context)
 
-# @csrf_exempt
-# def testquizgenerator(request):
-#     story_text = request.POST.get("story")
-#     #url实际上是指keyword
-#     #如果keyword可以自动生成的话，就是我需要的
-#     story_url = request.POST.get("storyurls")
-#     story_key = story_url.split()
-#     parsedoc = ParseDocument(story_text, story_key)
-#
-#     parsedoc.print_doc()
-#
-#     parsed_sentences = parsedoc.doc_to_sentences_ja()
-#     quiz_stem = parsedoc.sentence_select_ja(parsed_sentences)
-#     stem_key_list = parsedoc.stem_key_select(quiz_stem)
-#     contest = stem_key_list[0]
-#     return render(request, 'onlinetext/quizgenerate.html', contest)
+@csrf_exempt
+def testquizgenerator(request):
+    story_text = request.POST.get("story")
+    #url实际上是指keyword
+    #如果keyword可以自动生成的话，就是我需要的
+    story_url = request.POST.get("storyurls")
+    story_key = story_url.split()
+    parsedoc = ParseDocument(story_text, story_key)
+
+    parsed_sentences = parsedoc.doc_to_sentences_ja()
+    quiz_stem = parsedoc.sentence_select_ja(parsed_sentences)
+    stem_key_list = parsedoc.stem_key_select(quiz_stem)
+    contest = stem_key_list[0]
+
+    return render(request, 'onlinetext/quizgenerate.html', contest)
 
 def quizpage(request):
     return render(request, 'onlinetext/quizgenerate.html')
@@ -184,3 +201,27 @@ def displayquiz(request):
     question_quiz = Quizgenerator.objects.filter(user=request.user)
     contest = {"question_quiz": question_quiz}
     return render(request, "onlinetext/displayquiz.html", contest)
+
+
+
+def onlinetextpost(request, slug):
+    user = request.user
+    onlinetext = Learningtext.objects.filter(slug=slug, user=user).first()
+    comment = LearningtextLearningnote.objects.filter(onlinetext=onlinetext)
+    context = {
+        'onlinetext': onlinetext,
+        'comment': comment
+    }
+    return render(request, 'onlinetext/onlinetextpost.html', context)
+
+
+def onlinetextcomment(request):
+    learnnote = request.POST['onlinetextstudynote']
+    user = request.user
+    postSno = request.POST['onlinetextSno']
+    onlinetext = Learningtext.objects.get(id=postSno)
+
+    textcomment = LearningtextLearningnote(learnnote=learnnote, onlinetext=onlinetext)
+    textcomment.save()
+    messages.success(request, "Comment Added Successfully")
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

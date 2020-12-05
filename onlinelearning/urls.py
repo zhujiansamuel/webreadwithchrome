@@ -10,7 +10,8 @@ urlpatterns = [
     path('showonlinetxt', views.showonlinetext, name="showonlinetext"),
     path('showonlinetxtonhome', views.showonlinetextonhome, name="showonlinetextonhome"),
     path('quiz-generate', views.quizpage, name="quiz-page"),
-    #path('quiz-generate/postquiz', views.testquizgenerator, name="quiz"),
+    path('quiz-generate/postquiz', views.testquizgenerator, name="quiz"),
     path('quiz-generate/test', views.displayquiz, name="displayquiz"),
-
+    path('text/<str:slug>', views.onlinetextpost, name="onlinetextpost"),
+    path('onlinetextcomment', views.onlinetextcomment, name="onlinetextcomment"),
 ]

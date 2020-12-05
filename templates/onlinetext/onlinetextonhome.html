@@ -12,12 +12,23 @@
 
 
 {% if user.is_authenticated %}
-
-
+<div class="card">
+<div class="container my-4">
+    <div class="panel-group" id="accordion">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion"
+				   href="#collapseOne">
+					<h2>{% translate "Add paragraphs manually" %}</h2>
+				</a>
+			</h4>
+		</div>
+		<div id="collapseOne" class="panel-collapse collapse in">
+			<div class="panel-body">
     <form action="{% url 'save_text_function' %}" method="POST">
         {% csrf_token %}
         <div class="container my-4">
-            <h2>{% translate "Add paragraphs manually" %}</h2><br>
             <input name="notetitle" class="form-control form-control-lg" type="text" placeholder="{% translate "Title..." %}" /><br>
             <input name="texturls" class="form-control form-control-lg" type="text" placeholder="{% translate "Url..." %}" />
         </div>
@@ -33,11 +44,22 @@
         <div class="container my-4">
             <textarea name="content" class="form-control" id="story" name="story" rows="5">{% translate "Please enter the text to be recorded." %}</textarea>
         </div>
-
         <div class="container my-4">
             <button type="submit" class="btn btn-primary" id="savetext">{% translate "Save" %}</button>
         </div>
     </form>
+			</div>
+		</div>
+	</div>
+    </div><br>
+    </div><br>
+    </div>
+
+
+
+
+
+
 
 
 
@@ -52,6 +74,7 @@
                           <div class="mb-1 text-muted">{% translate "Date" %} : {{ text.online_text_date }}</div>
                           <p class="card-text previews">{{ text.online_text_expand_contest| truncatechars:200 }}</p>
                           <a href="{{text.online_text_url}}" class="btn btn-primary">{% translate "Go to webpage..." %}</a>
+                            <a href="/onlinelearning/text/{{ text.slug }}" class="btn btn-primary">Read More...</a>
                         </div>
                       </div><br>
             {% endfor %}

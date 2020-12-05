@@ -28,7 +28,6 @@ def blogpost(request, slug):
         'comment':comment,
         'replyDict':replyDict
     }
-    #render是不是只能传递三个参数？尤其最后的那个必须用字典型？
     return render(request, 'blog/blogpost.html',context)
 
 #添加评论
@@ -55,5 +54,4 @@ def Postcomment(request):
             Scomment.save()
             messages.success(request, "Replay Added Successfully")
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-        
     return redirect('home')

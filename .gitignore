@@ -42,3 +42,6 @@ pythonenv*
 
 idea.md
 .DS_Store
+data/glove.6B.300d.txt
+data/nb-predictor.pkl
+data/word2vec-glove.6B.300d.txt

@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.timezone import now
 from funtions import *
+from django.utils.text import slugify
 
 # Create your models here.
 class Learningtext(models.Model):
@@ -12,9 +13,11 @@ class Learningtext(models.Model):
     online_text_expand_contest = models.TextField(default=online_text)
     online_text_title = models.TextField(default="title null")
     online_text_language = models.TextField(default="en")
+    slug = models.SlugField(default="-")
 
-
-
+    def save(self, *args, **kwargs):
+        self.slug = slugify(generate_key(15))
+        super().save(*args, **kwargs)
 
 class Quizgenerator(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -24,3 +27,9 @@ class Quizgenerator(models.Model):
     text_question_type = models.TextField(default="cloze")
     #key-words
     text_key_word = models.TextField(default="null")
+
+class LearningtextLearningnote(models.Model):
+    onlinetext = models.ForeignKey(Learningtext, on_delete=models.CASCADE)
+    learnnote = models.TextField()
+    learnnote_date = models.DateTimeField(default=now)
+
