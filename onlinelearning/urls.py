@@ -9,9 +9,11 @@ urlpatterns = [
     path('login-from-chrome/sucessful', views.loginfromchromevalidation, name='loginfromchromevalidation'),
     path('showonlinetxt', views.showonlinetext, name="showonlinetext"),
     path('showonlinetxtonhome', views.showonlinetextonhome, name="showonlinetextonhome"),
+    path('testsetup', views.testsetup, name="testsetup"),
     path('quiz-generate', views.quizpage, name="quiz-page"),
     path('quiz-generate/postquiz', views.testquizgenerator, name="quiz"),
     path('quiz-generate/test', views.displayquiz, name="displayquiz"),
     path('text/<str:slug>', views.onlinetextpost, name="onlinetextpost"),
     path('onlinetextcomment', views.onlinetextcomment, name="onlinetextcomment"),
+    path('testgenerate', views.testgenerate, name="testgenerate"),
 ]

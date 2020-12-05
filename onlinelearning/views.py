@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate, logout
 from django.contrib.auth import login as auth_login
 from django.utils import timezone
 from django.contrib import messages
+from django.db.models import Q
 
 import json
 from funtions import *
@@ -130,10 +131,8 @@ def post_text_function(request):
         rake = Rake()
         story_key = rake.get_keywords(note_expand_contest,3)
         story_text = note_expand_contest
-
         parsedoc = ParseDocument(story_text, story_key)
         textcontest = Learningtext.objects.get(online_text=note_content)
-
         parsed_sentences = parsedoc.doc_to_sentences_ja()
         quiz_stem = parsedoc.sentence_select_ja(parsed_sentences)
         stem_key_list = parsedoc.stem_key_select(quiz_stem)
@@ -145,7 +144,6 @@ def post_text_function(request):
                                                  text_question_answer=stem_key["correct_key"],
                                                  text_question_type="CLOZE")
                     new_question.save()
-
     elif note_language == "en":
         textcontest = Learningtext.objects.get(online_text=note_content)
         questions = generateQuestions(note_expand_contest, 5)
@@ -161,11 +159,6 @@ def post_text_function(request):
         #这里可能写入别的语言
         pass
     return HttpResponse(json.dumps(return_json), content_type='application/json')
-
-
-
-
-
 
 
 def showonlinetext(request):
@@ -191,7 +184,6 @@ def testquizgenerator(request):
     quiz_stem = parsedoc.sentence_select_ja(parsed_sentences)
     stem_key_list = parsedoc.stem_key_select(quiz_stem)
     contest = stem_key_list[0]
-
     return render(request, 'onlinetext/quizgenerate.html', contest)
 
 def quizpage(request):
@@ -225,3 +217,26 @@ def onlinetextcomment(request):
     textcomment.save()
     messages.success(request, "Comment Added Successfully")
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+def testsetup(request):
+    return render(request, 'onlinetext/testcreater.html')
+
+
+
+
+def testgenerate(request):
+    question_number = request.POST.get('questionNo')
+    user = request.user
+    questions = Quizgenerator.objects.filter(user=user)
+    questions = questions.filter(Q(test_results="false") | Q(test_results="null"))
+    questions = questions.order_by("text_question_date")
+    if questions.count() <= int(question_number):
+        question = questions[:int(question_number)]
+        context = {
+            'questions': question,
+        }
+    else:
+        context = {
+            'questions': questions,
+        }
+    return render(request, 'onlinetext/XXXXXXXXXX.html', context)

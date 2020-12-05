@@ -25,8 +25,10 @@ class Quizgenerator(models.Model):
     text_question = models.TextField(default="no text_question")
     text_question_answer = models.TextField(default="no text_question_answer")
     text_question_type = models.TextField(default="cloze")
+    text_question_date = models.DateTimeField(default=now)
     #key-words
     text_key_word = models.TextField(default="null")
+    test_results = models.TextField(default="null")
 
 class LearningtextLearningnote(models.Model):
     onlinetext = models.ForeignKey(Learningtext, on_delete=models.CASCADE)
