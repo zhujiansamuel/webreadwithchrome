@@ -229,14 +229,40 @@ def testgenerate(request):
     user = request.user
     questions = Quizgenerator.objects.filter(user=user)
     questions = questions.filter(Q(test_results="false") | Q(test_results="null"))
-    questions = questions.order_by("text_question_date")
-    if questions.count() <= int(question_number):
+    questions = questions.order_by("?")
+
+    if questions.count() >= int(question_number):
+
         question = questions[:int(question_number)]
-        context = {
-            'questions': question,
+        contest = {
+            'question_quiz': question,
         }
     else:
-        context = {
-            'questions': questions,
+        contest = {
+            'question_quiz': questions,
         }
-    return render(request, 'onlinetext/XXXXXXXXXX.html', context)
+    return render(request, "onlinetext/displayquiz.html", contest)
+
+
+@csrf_exempt
+def answercheck(request):
+    answers = request.POST.getlist('answers')
+    question_id = request.POST.getlist('questionid')
+    testright = 0
+    for index,q_id in enumerate(question_id):
+        question_in_database = Quizgenerator.objects.filter(id=int(q_id)).first()
+
+        if answers[int(index)] == question_in_database.text_question_answer:
+            question_in_database.test_results="true"
+            question_in_database.text_question_date=now()
+            question_in_database.save()
+            testright += 1
+        else:
+            question_in_database.test_results="false"
+            question_in_database.text_question_date = now()
+            question_in_database.save()
+    result = str(testright) + "/" + str(index+1)
+    contest = {
+        'result': result,
+    }
+    return render(request, "onlinetext/testresult.html", contest)

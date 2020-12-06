@@ -51,18 +51,16 @@
 
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-            <div
-                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">{% translate "Your OnlineText" %}</h1>
             </div>
-            <div class="row">
-
+            <div class="panel-body">
                 <!--这里开始写-->
                 {% for text in alltexts reversed %}
                     <div class="card">
                         <strong class="d-inline-block text-primary px-2">{% translate "Upload at" %} : {{ text.online_text_title }}</strong>
                             <div class="card-body">
-                              <h5 class="card-title">{% translate "OnlineText" %} : {{ text.online_text| truncatechars:10 }}</h5>
+                              <h5 class="card-title">{% translate "OnlineText" %} : {{ text.online_text| truncatechars:30 }}</h5>
                               <div class="mb-1 text-muted">{% translate "Date" %}:{{ text.online_text_date }}</div>
                               <p class="card-text previews">{{ text.online_text_expand_contest| truncatechars:200 }}</p>
                               <a href="{{text.online_text_url}}" class="btn btn-primary">{% translate "Go to webpage..." %}</a>
@@ -70,11 +68,10 @@
                           </div><br>
 
                 {% endfor %}
-                    </div>
 
-
-            </div>
-        </main>
+                </div>
+            </main>
+        </div>
     </div>
 </div>
 {% endblock body %}

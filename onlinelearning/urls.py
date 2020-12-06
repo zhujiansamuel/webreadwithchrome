@@ -16,4 +16,5 @@ urlpatterns = [
     path('text/<str:slug>', views.onlinetextpost, name="onlinetextpost"),
     path('onlinetextcomment', views.onlinetextcomment, name="onlinetextcomment"),
     path('testgenerate', views.testgenerate, name="testgenerate"),
+    path('answercheck', views.answercheck, name="answercheck"),
 ]

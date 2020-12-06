@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% translate "Login from website" %}{% endblock title %}
+
+
+
+
+{% block head %}
+{% endblock head %}
+
+
+
+
+
+{% block body %}
+<center>
+    <h1></h1>
+    <br>
+    <br>
+    <br>
+    <h1>{% translate "Test Results" %}<span id="nameformessage">{{ result }}</span></h1>
+    <br>
+    <br>
+    <h5>{% translate "You can review incorrectly answered questions in the user interface" %}<span id="nameformessage"></span></h5>
+    <br>
+    <h1></h1>
+    <br>
+</center>
+
+{% endblock body %}
