@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
-{% block title %}Courses
-{% endblock title %}
+{% block title %}{% translate "Courses" %}{% endblock title %}
 
 {% block head %}
 {% endblock head %}
@@ -20,11 +20,11 @@
                     <li class="list-group-item"><img src="https://img.icons8.com/android/20/000000/time.png" />
                         {{ course.course_length }}</li>
                     <li class="list-group-item"><img src="https://img.icons8.com/metro/20/000000/price-tag-euro.png" />
-                        {% if course.course_type == "PAID" %}₹ {{ course.course_price }} /-{% else %}{{ course.course_type }}{% endif %}</li>
+                        {% if course.course_type == "PAID" %}{% translate "￥" %}{{ course.course_price }} /-{% else %}{{ course.course_type }}{% endif %}</li>
                 </ul>
                 <div class="card-body">
                     <center>
-                        <a href="{% url 'course_detail' course.course_slug %}" class="btn btn-info py-2 my-1">View Course Details</a>
+                        <a href="{% url 'course_detail' course.course_slug %}" class="btn btn-info py-2 my-1">{% translate "View Course Details" %}</a>
                     </center>
                 </div>
             </div>

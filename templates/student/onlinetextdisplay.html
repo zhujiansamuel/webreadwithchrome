@@ -42,7 +42,7 @@
                         <!--加上 active 后变为高亮-->
                         <a class="nav-link active" href="{% url 'showonlinetext' %}">
                             <img src="https://img.icons8.com/wired/24/000000/singing-teacher.png" />
-                            {% translate "Your OnlineText" %}
+                            {% translate "Your TestResults" %}
                         </a>
                     </li>
                 </ul>
@@ -53,17 +53,19 @@
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">{% translate "Your OnlineText" %}</h1>
+
             </div>
             <div class="panel-body">
+            <h1 class="h5">{% translate "Questions that were answered incorrectly in the test will be displayed here." %}</h1>
                 <!--这里开始写-->
-                {% for text in alltexts reversed %}
+                {% for quiz in alltexts reversed %}
                     <div class="card">
-                        <strong class="d-inline-block text-primary px-2">{% translate "Upload at" %} : {{ text.online_text_title }}</strong>
+                        <strong class="d-inline-block text-primary px-2">{% translate "Upload at" %} : {{ quiz.textcontest.online_text_title }}</strong>
                             <div class="card-body">
-                              <h5 class="card-title">{% translate "OnlineText" %} : {{ text.online_text| truncatechars:30 }}</h5>
-                              <div class="mb-1 text-muted">{% translate "Date" %}:{{ text.online_text_date }}</div>
-                              <p class="card-text previews">{{ text.online_text_expand_contest| truncatechars:200 }}</p>
-                              <a href="{{text.online_text_url}}" class="btn btn-primary">{% translate "Go to webpage..." %}</a>
+                              <h5 class="card-title">{% translate "Question" %} : {{ quiz.text_question }}</h5>
+                              <div class="mb-1 text-muted">{% translate "Date" %}:{{ quiz.text_question_date }}</div>
+                              <p class="card-text previews">{% translate "Answer" %} : {{ quiz.text_question_answer }}</p>
+                              <a href="{{quiz.textcontest.online_text_url}}" class="btn btn-primary">{% translate "Go to webpage..." %}</a>
                             </div>
                           </div><br>
 

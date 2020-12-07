@@ -162,7 +162,8 @@ def post_text_function(request):
 
 
 def showonlinetext(request):
-    alltexts = Learningtext.objects.filter(user=request.user)
+    alltexts = Quizgenerator.objects.filter(user=request.user , test_results="false")
+
     context = {'alltexts': alltexts}
     return render(request, 'student/onlinetextdisplay.html', context)
 
