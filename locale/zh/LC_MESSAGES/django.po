@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-07 19:44+0900\n"
-"PO-Revision-Date: 2020-12-07 20:23+0900\n"
+"POT-Creation-Date: 2020-12-07 22:37+0900\n"
+"PO-Revision-Date: 2020-12-07 22:52+0900\n"
 "Language: zh\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,7 +29,7 @@ msgstr "日语"
 msgid "Chinese"
 msgstr "中文"
 
-#: .\templates\404.html:3 .\templates\base.html:244
+#: .\templates\404.html:3 .\templates\base.html:259
 #: .\templates\login_chrome.html:7 .\templates\onlinetext\testcreater.html:5
 msgid "Back to top"
 msgstr "回到顶部"
@@ -52,119 +52,122 @@ msgstr "首页"
 msgid "and try from there."
 msgstr "从那里尝试。"
 
-#: .\templates\base.html:17
+#: .\templates\base.html:14
 msgid "-Lying DOWN Learning"
 msgstr "- 躺下学习"
 
-#: .\templates\base.html:53 .\templates\onlinetext\onlinetextpost.html:5
+#: .\templates\base.html:45 .\templates\onlinetext\onlinetextpost.html:5
 msgid "Lying DOWN Learning"
 msgstr "躺下学习"
 
-#: .\templates\base.html:67
+#: .\templates\base.html:57
 msgid "My Knowledge"
 msgstr "我的知识"
 
-#: .\templates\base.html:70
+#: .\templates\base.html:60
 msgid "My Test"
 msgstr "我的测试"
 
-#: .\templates\base.html:74 .\templates\course\courses.html:4
+#: .\templates\base.html:64 .\templates\course\courses.html:4
 msgid "Courses"
 msgstr "课程"
 
-#: .\templates\base.html:77
+#: .\templates\base.html:67
 msgid "Notification"
 msgstr "通知"
 
-#: .\templates\base.html:91
+#: .\templates\base.html:79
 msgid "User Account"
 msgstr "用户账户"
 
-#: .\templates\base.html:93
+#: .\templates\base.html:81
 msgid "Logout"
 msgstr "注销"
 
-#: .\templates\base.html:100 .\templates\base.html:128
-#: .\templates\base.html:137 .\templates\base.html:156
-#: .\templates\login_chrome.html:35
+#: .\templates\base.html:87 .\templates\base.html:143 .\templates\base.html:152
+#: .\templates\base.html:171 .\templates\login_chrome.html:35
 msgid "Login"
 msgstr "登录"
 
-#: .\templates\base.html:103 .\templates\base.html:176
-#: .\templates\base.html:185 .\templates\base.html:226
+#: .\templates\base.html:90 .\templates\base.html:191 .\templates\base.html:200
+#: .\templates\base.html:241
 msgid "Ragister"
 msgstr "注册"
 
-#: .\templates\base.html:145 .\templates\base.html:190
+#: .\templates\base.html:96
+msgid "Language"
+msgstr "语言"
+
+#: .\templates\base.html:160 .\templates\base.html:205
 #: .\templates\login_chrome.html:28
 msgid "Username"
 msgstr "用户名"
 
-#: .\templates\base.html:146 .\templates\base.html:191
+#: .\templates\base.html:161 .\templates\base.html:206
 msgid "Enter Username"
 msgstr "输入用户名"
 
-#: .\templates\base.html:152 .\templates\login_chrome.html:32
+#: .\templates\base.html:167 .\templates\login_chrome.html:32
 msgid "Password"
 msgstr "密码"
 
-#: .\templates\base.html:153 .\templates\base.html:218
+#: .\templates\base.html:168 .\templates\base.html:233
 msgid "Enter Password"
 msgstr "输入密码"
 
-#: .\templates\base.html:164 .\templates\base.html:232
+#: .\templates\base.html:179 .\templates\base.html:247
 msgid "Close"
 msgstr "关闭"
 
-#: .\templates\base.html:196
+#: .\templates\base.html:211
 msgid "Email"
 msgstr "邮箱"
 
-#: .\templates\base.html:197
+#: .\templates\base.html:212
 msgid "Enter Email"
 msgstr "输入邮箱"
 
-#: .\templates\base.html:202
+#: .\templates\base.html:217
 msgid "Mobile No"
 msgstr "手机号码"
 
-#: .\templates\base.html:203
+#: .\templates\base.html:218
 msgid "Enter Mobile No 09876543210"
 msgstr "输入手机号 09876543210"
 
-#: .\templates\base.html:207
+#: .\templates\base.html:222
 msgid "Date of Birth"
 msgstr "出生日期"
 
-#: .\templates\base.html:208
+#: .\templates\base.html:223
 msgid "Enter Date of Birth"
 msgstr "输入出生日期"
 
-#: .\templates\base.html:212
+#: .\templates\base.html:227
 msgid "Address"
 msgstr "地址"
 
-#: .\templates\base.html:213
+#: .\templates\base.html:228
 msgid "Enter Full Address"
 msgstr "输入地址"
 
-#: .\templates\base.html:217 .\templates\successfulLoginFromChrome.html:23
+#: .\templates\base.html:232 .\templates\successfulLoginFromChrome.html:23
 msgid "Welcome"
 msgstr "欢迎"
 
-#: .\templates\base.html:221
+#: .\templates\base.html:236
 msgid "Password must contain the following:"
 msgstr "密码必须包含以下内容："
 
-#: .\templates\base.html:222
+#: .\templates\base.html:237
 msgid "lowercase, "
-msgstr "小写"
+msgstr "小写，"
 
-#: .\templates\base.html:223
+#: .\templates\base.html:238
 msgid "capital (uppercase), "
 msgstr "大写，"
 
-#: .\templates\base.html:224
+#: .\templates\base.html:239
 msgid "number"
 msgstr "数值"
 

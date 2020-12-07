@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-07 17:37+0900\n"
-"PO-Revision-Date: 2020-12-07 20:18+0900\n"
+"POT-Creation-Date: 2020-12-07 23:04+0900\n"
+"PO-Revision-Date: 2020-12-07 23:27+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "X-Generator: Poedit 2.4.2\n"
 
 #: .\startup\settings.py:119 .\templates\onlinetext\onlinetextonhome.html:40
@@ -30,7 +30,7 @@ msgstr "日本語"
 msgid "Chinese"
 msgstr "中国語"
 
-#: .\templates\404.html:3 .\templates\base.html:244
+#: .\templates\404.html:3 .\templates\base.html:259
 #: .\templates\login_chrome.html:7 .\templates\onlinetext\testcreater.html:5
 msgid "Back to top"
 msgstr "トップへ戻る"
@@ -55,120 +55,122 @@ msgstr "ホーム"
 msgid "and try from there."
 msgstr "そしてそこから試してみてください。"
 
-#: .\templates\base.html:17
+#: .\templates\base.html:14
 msgid "-Lying DOWN Learning"
 msgstr "-横になって学習"
 
-#: .\templates\base.html:53 .\templates\onlinetext\onlinetextpost.html:5
+#: .\templates\base.html:45 .\templates\onlinetext\onlinetextpost.html:5
 msgid "Lying DOWN Learning"
 msgstr "横になって学習"
 
-#: .\templates\base.html:67
-#, fuzzy
+#: .\templates\base.html:57
 msgid "My Knowledge"
 msgstr "私の知識"
 
-#: .\templates\base.html:70
+#: .\templates\base.html:60
 msgid "My Test"
 msgstr "マイテスト"
 
-#: .\templates\base.html:74 .\templates\course\courses.html:4
+#: .\templates\base.html:64 .\templates\course\courses.html:4
 msgid "Courses"
 msgstr "コース"
 
-#: .\templates\base.html:77
+#: .\templates\base.html:67
 msgid "Notification"
 msgstr "通知"
 
-#: .\templates\base.html:91
+#: .\templates\base.html:79
 msgid "User Account"
 msgstr "ユーザーアカウント"
 
-#: .\templates\base.html:93
+#: .\templates\base.html:81
 msgid "Logout"
 msgstr "ログアウト"
 
-#: .\templates\base.html:100 .\templates\base.html:128
-#: .\templates\base.html:137 .\templates\base.html:156
-#: .\templates\login_chrome.html:35
+#: .\templates\base.html:87 .\templates\base.html:143 .\templates\base.html:152
+#: .\templates\base.html:171 .\templates\login_chrome.html:35
 msgid "Login"
 msgstr "ログイン"
 
-#: .\templates\base.html:103 .\templates\base.html:176
-#: .\templates\base.html:185 .\templates\base.html:226
+#: .\templates\base.html:90 .\templates\base.html:191 .\templates\base.html:200
+#: .\templates\base.html:241
 msgid "Ragister"
 msgstr "登録"
 
-#: .\templates\base.html:145 .\templates\base.html:190
+#: .\templates\base.html:96
+msgid "Language"
+msgstr "言語"
+
+#: .\templates\base.html:160 .\templates\base.html:205
 #: .\templates\login_chrome.html:28
 msgid "Username"
 msgstr "ユーザー名"
 
-#: .\templates\base.html:146 .\templates\base.html:191
+#: .\templates\base.html:161 .\templates\base.html:206
 msgid "Enter Username"
 msgstr "ユーザー名を入力"
 
-#: .\templates\base.html:152 .\templates\login_chrome.html:32
+#: .\templates\base.html:167 .\templates\login_chrome.html:32
 msgid "Password"
 msgstr "パスワード"
 
-#: .\templates\base.html:153 .\templates\base.html:218
+#: .\templates\base.html:168 .\templates\base.html:233
 msgid "Enter Password"
 msgstr "パスワードを入力"
 
-#: .\templates\base.html:164 .\templates\base.html:232
+#: .\templates\base.html:179 .\templates\base.html:247
 msgid "Close"
 msgstr "閉じる"
 
-#: .\templates\base.html:196
+#: .\templates\base.html:211
 msgid "Email"
 msgstr "メールアドレス"
 
-#: .\templates\base.html:197
+#: .\templates\base.html:212
 msgid "Enter Email"
 msgstr "メールアドレスを入力"
 
-#: .\templates\base.html:202
+#: .\templates\base.html:217
 msgid "Mobile No"
 msgstr "携帯電話"
 
-#: .\templates\base.html:203
+#: .\templates\base.html:218
 msgid "Enter Mobile No 09876543210"
 msgstr "携帯電話を入力してください（09876543210）"
 
-#: .\templates\base.html:207
+#: .\templates\base.html:222
 msgid "Date of Birth"
 msgstr "生年月日"
 
-#: .\templates\base.html:208
+#: .\templates\base.html:223
 msgid "Enter Date of Birth"
 msgstr "生年月日を入力"
 
-#: .\templates\base.html:212
+#: .\templates\base.html:227
 msgid "Address"
 msgstr "住所"
 
-#: .\templates\base.html:213
+#: .\templates\base.html:228
 msgid "Enter Full Address"
 msgstr "アドレスを入力"
 
-#: .\templates\base.html:217 .\templates\successfulLoginFromChrome.html:23
+#: .\templates\base.html:232 .\templates\successfulLoginFromChrome.html:23
 msgid "Welcome"
 msgstr "ようこそ"
 
-#: .\templates\base.html:221
+#: .\templates\base.html:236
 msgid "Password must contain the following:"
 msgstr "パスワードには、次の情報が含まれている必要があります："
 
-#: .\templates\base.html:222
+#: .\templates\base.html:237
 msgid "lowercase, "
 msgstr "小文字"
 
-#: .\templates\base.html:223
+#: .\templates\base.html:238
 msgid "capital (uppercase), "
 msgstr "大文字"
 
-#: .\templates\base.html:224
+#: .\templates\base.html:239
 msgid "number"
 msgstr "ナンバー"
 
@@ -330,24 +332,20 @@ msgid "Number of questions : "
 msgstr "質問数 :"
 
 #: .\templates\onlinetext\testcreater.html:27
-#, fuzzy
 msgid "5 QUESTIONS"
-msgstr "5質問"
+msgstr "質問5個"
 
 #: .\templates\onlinetext\testcreater.html:28
-#, fuzzy
 msgid "10 QUESTIONS"
-msgstr "10の質問"
+msgstr "質問10個"
 
 #: .\templates\onlinetext\testcreater.html:29
-#, fuzzy
 msgid "15 QUESTIONS"
-msgstr "15質問"
+msgstr "質問15個"
 
 #: .\templates\onlinetext\testcreater.html:30
-#, fuzzy
 msgid "20 QUESTIONS"
-msgstr "20質問"
+msgstr "質問20個"
 
 #: .\templates\onlinetext\testcreater.html:34
 msgid "Start Testing"
