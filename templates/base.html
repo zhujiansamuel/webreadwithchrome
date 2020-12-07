@@ -4,24 +4,18 @@
 {% load static %}
 
 <head>
-
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
   <title>
       {% block title %}{% endblock title %}
       {% translate "-Lying DOWN Learning" %}
   </title>
 
-
-
   {% block head %}
   {% endblock head %}
-
 
   <style>
     .showpassword {
@@ -42,16 +36,13 @@
     }
   </style>
 
-
 </head>
 
 
 <body>
-
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom shadow-sm">
     <div class="container">
       <a class="navbar-brand" href="{% url 'home' %}">{% translate "Lying DOWN Learning" %}</a>
-
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,7 +51,6 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-
 
       {% if user.is_authenticated %}
           <li class="nav-item active">
@@ -83,9 +73,7 @@
       {% if user.is_authenticated %}
           <li class="nav-item dropdown active">
             <a class="nav-link dropdown-toggle" href="#" id="studentDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-
                 <img src="https://img.icons8.com/color/24/000000/user-male-circle.png"/> {{ request.user|upper }}
-
             </a>
             <div class="dropdown-menu" aria-labelledby="studentDropdown">
               <a class="dropdown-item" href="{% url 'info' %}">{% translate "User Account" %}</a>
@@ -93,7 +81,6 @@
               <a class="dropdown-item" href="{% url 'handlelogout' %}">{% translate "Logout" %}</a>
             </div>
           </li>
-
       {% else %}
           <li class="nav-item active">
             <!-- Button trigger modal -->
@@ -104,8 +91,36 @@
           </li>
           {% endif %}
 
+                    <li class="nav-item" style="border-style: none;border-bottom-style: none;">
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% trans "Language" %}</a>
+                        <form action="{% url 'set_language' %}" method="post" id="lang_form">{% csrf_token %}
+                        <input name="next" type="hidden" value="{{ redirect_to }}">
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                {% get_current_language as LANGUAGE_CODE %}
+                                {% get_available_languages as LANGUAGES %}
+                                {% get_language_info_list for LANGUAGES as languages %}
+                                {% for language in languages %}
+
+                                <li>
+                                    <button type="submit" name="language" value="{{ language.code }}" class="{% if language.code == LANGUAGE_CODE %}selected{% else%}demo-text-black{% endif %} dropdown-item">
+                                        {{ language.name_local }}</button>
+                                </li>
+                                {% endfor %}
+                                </ul>
+                            </form>
+                            </a>
+                        </li>
+                    </li>
+
+
+
+
 
         </ul>
+
+
+
       </div>
     </div>
   </nav>
