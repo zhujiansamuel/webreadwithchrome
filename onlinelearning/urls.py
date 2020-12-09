@@ -17,4 +17,6 @@ urlpatterns = [
     path('onlinetextcomment', views.onlinetextcomment, name="onlinetextcomment"),
     path('testgenerate', views.testgenerate, name="testgenerate"),
     path('answercheck', views.answercheck, name="answercheck"),
+    path('delonlinetext', views.del_onlinetext, name="delonlinetext"),
+
 ]

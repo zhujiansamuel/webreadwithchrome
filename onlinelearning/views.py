@@ -102,7 +102,9 @@ def post_text_function(request):
 
     #！！！这里需要根据发送规则修改
     auth_key = request.POST.get('authkey')
+    print(auth_key)
     note_content = request.POST.get('content')
+    print(note_content)
     note_urls = str(request.POST.get('texturls'))
     note_date = request.POST.get('notedate')
     note_language = request.POST.get('notelanguage')
@@ -267,3 +269,11 @@ def answercheck(request):
         'result': result,
     }
     return render(request, "onlinetext/testresult.html", contest)
+
+def del_onlinetext(request):
+    id_onlinetext = request.GET.get("id")
+    del_object = Learningtext.objects.get(id=id_onlinetext )
+    del_question = Quizgenerator.objects.filter(textcontest=del_object)
+    del_object.delete()
+    del_question.delete()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
