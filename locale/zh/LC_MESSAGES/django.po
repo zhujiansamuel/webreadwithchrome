@@ -1,0 +1,462 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-07 22:37+0900\n"
+"PO-Revision-Date: 2020-12-07 22:52+0900\n"
+"Language: zh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.4.2\n"
+
+#: .\startup\settings.py:119 .\templates\onlinetext\onlinetextonhome.html:40
+msgid "English"
+msgstr "英语"
+
+#: .\startup\settings.py:120 .\templates\onlinetext\onlinetextonhome.html:39
+msgid "Japanese"
+msgstr "日语"
+
+#: .\startup\settings.py:121
+msgid "Chinese"
+msgstr "中文"
+
+#: .\templates\404.html:3 .\templates\base.html:259
+#: .\templates\login_chrome.html:7 .\templates\onlinetext\testcreater.html:5
+msgid "Back to top"
+msgstr "回到顶部"
+
+#: .\templates\404.html:70
+msgid ""
+"Maybe this page moved? Got deleted? Is hiding out in quarantine? Never "
+"existed in the first place?"
+msgstr "也许这个页面被移动了？被删除？被隔离了吗？一开始就不存在了？"
+
+#: .\templates\404.html:70
+msgid "Let's go"
+msgstr "让我们开始吧"
+
+#: .\templates\404.html:70
+msgid "home"
+msgstr "首页"
+
+#: .\templates\404.html:70
+msgid "and try from there."
+msgstr "从那里尝试。"
+
+#: .\templates\base.html:14
+msgid "-Lying DOWN Learning"
+msgstr "- 躺下学习"
+
+#: .\templates\base.html:45 .\templates\onlinetext\onlinetextpost.html:5
+msgid "Lying DOWN Learning"
+msgstr "躺下学习"
+
+#: .\templates\base.html:57
+msgid "My Knowledge"
+msgstr "我的知识"
+
+#: .\templates\base.html:60
+msgid "My Test"
+msgstr "我的测试"
+
+#: .\templates\base.html:64 .\templates\course\courses.html:4
+msgid "Courses"
+msgstr "课程"
+
+#: .\templates\base.html:67
+msgid "Notification"
+msgstr "通知"
+
+#: .\templates\base.html:79
+msgid "User Account"
+msgstr "用户账户"
+
+#: .\templates\base.html:81
+msgid "Logout"
+msgstr "注销"
+
+#: .\templates\base.html:87 .\templates\base.html:143 .\templates\base.html:152
+#: .\templates\base.html:171 .\templates\login_chrome.html:35
+msgid "Login"
+msgstr "登录"
+
+#: .\templates\base.html:90 .\templates\base.html:191 .\templates\base.html:200
+#: .\templates\base.html:241
+msgid "Ragister"
+msgstr "注册"
+
+#: .\templates\base.html:96
+msgid "Language"
+msgstr "语言"
+
+#: .\templates\base.html:160 .\templates\base.html:205
+#: .\templates\login_chrome.html:28
+msgid "Username"
+msgstr "用户名"
+
+#: .\templates\base.html:161 .\templates\base.html:206
+msgid "Enter Username"
+msgstr "输入用户名"
+
+#: .\templates\base.html:167 .\templates\login_chrome.html:32
+msgid "Password"
+msgstr "密码"
+
+#: .\templates\base.html:168 .\templates\base.html:233
+msgid "Enter Password"
+msgstr "输入密码"
+
+#: .\templates\base.html:179 .\templates\base.html:247
+msgid "Close"
+msgstr "关闭"
+
+#: .\templates\base.html:211
+msgid "Email"
+msgstr "邮箱"
+
+#: .\templates\base.html:212
+msgid "Enter Email"
+msgstr "输入邮箱"
+
+#: .\templates\base.html:217
+msgid "Mobile No"
+msgstr "手机号码"
+
+#: .\templates\base.html:218
+msgid "Enter Mobile No 09876543210"
+msgstr "输入手机号 09876543210"
+
+#: .\templates\base.html:222
+msgid "Date of Birth"
+msgstr "出生日期"
+
+#: .\templates\base.html:223
+msgid "Enter Date of Birth"
+msgstr "输入出生日期"
+
+#: .\templates\base.html:227
+msgid "Address"
+msgstr "地址"
+
+#: .\templates\base.html:228
+msgid "Enter Full Address"
+msgstr "输入地址"
+
+#: .\templates\base.html:232 .\templates\successfulLoginFromChrome.html:23
+msgid "Welcome"
+msgstr "欢迎"
+
+#: .\templates\base.html:236
+msgid "Password must contain the following:"
+msgstr "密码必须包含以下内容："
+
+#: .\templates\base.html:237
+msgid "lowercase, "
+msgstr "小写，"
+
+#: .\templates\base.html:238
+msgid "capital (uppercase), "
+msgstr "大写，"
+
+#: .\templates\base.html:239
+msgid "number"
+msgstr "数值"
+
+#: .\templates\blog\blog.html:3 .\templates\blog\blog.html:11
+msgid "Notification by Lying DOWN Learning"
+msgstr "躺下学习发来的通知"
+
+#: .\templates\blog\blog.html:18
+msgid "Read More..."
+msgstr "阅读更多..."
+
+#: .\templates\course\checkout.html:4
+msgid "Checkout"
+msgstr "结帐"
+
+#: .\templates\course\checkout.html:4 .\templates\course\course_detail.html:3
+msgid "Courses Details"
+msgstr "课程详情"
+
+#: .\templates\course\checkout.html:12
+msgid "Check Out"
+msgstr "付款"
+
+#: .\templates\course\checkout.html:25 .\templates\course\checkout.html:38
+#: .\templates\course\courses.html:23 .\templates\course\pricing.html:30
+msgid "￥"
+msgstr "￥"
+
+#: .\templates\course\checkout.html:31
+msgid "Your cart"
+msgstr "您的购物车"
+
+#: .\templates\course\checkout.html:42 .\templates\course\checkout.html:45
+msgid "Continue to checkout"
+msgstr "继续结帐"
+
+#: .\templates\course\course_detail.html:22
+#: .\templates\student\user_course.html:66
+msgid "Progress"
+msgstr "进度"
+
+#: .\templates\course\course_detail.html:25
+msgid "SUBSCRIBED"
+msgstr "订阅"
+
+#: .\templates\course\course_detail.html:26
+msgid "Subscribe Now"
+msgstr "现在订阅"
+
+#: .\templates\course\courses.html:27 .\templates\course\pricing.html:34
+msgid "View Course Details"
+msgstr "查看课程详情"
+
+#: .\templates\course\index.html:13
+msgid "Lying DOWNN Learing !"
+msgstr "躺下学习！"
+
+#: .\templates\course\index.html:14
+msgid "Review the marked knowledge by automatically asking questions."
+msgstr "通过自动提问来学习标记的知识。"
+
+#: .\templates\course\lecture.html:55
+msgid "Comments: "
+msgstr "评论："
+
+#: .\templates\course\lecture.html:62
+msgid "Enter Comment here"
+msgstr "在此处输入注释"
+
+#: .\templates\course\lecture.html:65
+#: .\templates\onlinetext\displayquiz.html:31
+msgid "Submit"
+msgstr "提交"
+
+#: .\templates\course\pricing.html:3
+msgid "Pricing"
+msgstr "价格"
+
+#: .\templates\course\pricing.html:12
+msgid "Subscripe to Premium Courses"
+msgstr "订阅高级课程"
+
+#: .\templates\course\pricing.html:13
+msgid "ENJOY PREMIUM CONTENT AT AFFORDABLE PRICE"
+msgstr "以实惠的价格享受优质内容"
+
+#: .\templates\login_chrome.html:19
+msgid "Log-in"
+msgstr "登录"
+
+#: .\templates\onlinetext\displayquiz.html:22
+msgid "Quesion"
+msgstr "问题"
+
+#: .\templates\onlinetext\displayquiz.html:25
+msgid "Please enter the answer here"
+msgstr "请在此处输入答案"
+
+#: .\templates\onlinetext\onlinetextonhome.html:5
+#: .\templates\onlinetext\onlinetextonhome.html:65
+msgid "OnlineText"
+msgstr "在线文本"
+
+#: .\templates\onlinetext\onlinetextonhome.html:23
+msgid "Add paragraphs manually"
+msgstr "手动添加"
+
+#: .\templates\onlinetext\onlinetextonhome.html:32
+#: .\templates\onlinetext\onlinetextpost.html:43
+msgid "Title..."
+msgstr "题目..."
+
+#: .\templates\onlinetext\onlinetextonhome.html:33
+msgid "Url..."
+msgstr "Url..."
+
+#: .\templates\onlinetext\onlinetextonhome.html:37
+msgid "Language : "
+msgstr "语言："
+
+#: .\templates\onlinetext\onlinetextonhome.html:45
+msgid "Please enter the text to be recorded."
+msgstr "请输入要记录的文本。"
+
+#: .\templates\onlinetext\onlinetextonhome.html:48
+#: .\templates\onlinetext\onlinetextpost.html:47
+msgid "Save"
+msgstr "保存"
+
+#: .\templates\onlinetext\onlinetextonhome.html:60
+msgid "Noted text on-line"
+msgstr "在线标注的文本"
+
+#: .\templates\onlinetext\onlinetextonhome.html:63
+#: .\templates\student\onlinetextdisplay.html:63
+msgid "Upload at"
+msgstr "发布"
+
+#: .\templates\onlinetext\onlinetextonhome.html:66
+#: .\templates\student\onlinetextdisplay.html:66
+msgid "Date"
+msgstr "日期"
+
+#: .\templates\onlinetext\onlinetextonhome.html:68
+#: .\templates\student\onlinetextdisplay.html:68
+msgid "Go to webpage..."
+msgstr "转到网页..."
+
+#: .\templates\onlinetext\onlinetextpost.html:36
+msgid "Study notes"
+msgstr "学习笔记"
+
+#: .\templates\onlinetext\testcreater.html:15
+msgid "Test setup"
+msgstr "测试设置"
+
+#: .\templates\onlinetext\testcreater.html:25
+msgid "Number of questions : "
+msgstr "问题数量 ："
+
+#: .\templates\onlinetext\testcreater.html:27
+#, fuzzy
+msgid "5 QUESTIONS"
+msgstr "5 个问题"
+
+#: .\templates\onlinetext\testcreater.html:28
+#, fuzzy
+msgid "10 QUESTIONS"
+msgstr "10 个问题"
+
+#: .\templates\onlinetext\testcreater.html:29
+#, fuzzy
+msgid "15 QUESTIONS"
+msgstr "15 个问题"
+
+#: .\templates\onlinetext\testcreater.html:30
+#, fuzzy
+msgid "20 QUESTIONS"
+msgstr "20 个问题"
+
+#: .\templates\onlinetext\testcreater.html:34
+msgid "Start Testing"
+msgstr "开始测试"
+
+#: .\templates\onlinetext\testresult.html:5
+#: .\templates\successfulLoginFromChrome.html:5
+msgid "Login from website"
+msgstr "从网站登录"
+
+#: .\templates\onlinetext\testresult.html:23
+msgid "Test Results"
+msgstr "测试结果"
+
+#: .\templates\onlinetext\testresult.html:26
+msgid "You can review incorrectly answered questions in the user interface"
+msgstr "您可以在用户界面中查看回答错误的问题"
+
+#: .\templates\student\change_password.html:5
+msgid "Change Password - "
+msgstr "更改密码 -"
+
+#: .\templates\student\change_password.html:5
+msgid " - Student Dashboard "
+msgstr "- 学生仪表板"
+
+#: .\templates\student\change_password.html:19 .\templates\student\info.html:18
+#: .\templates\student\onlinetextdisplay.html:23
+#: .\templates\student\user_course.html:22
+msgid "Profile"
+msgstr "个人资料"
+
+#: .\templates\student\change_password.html:26
+#: .\templates\student\change_password.html:51
+#: .\templates\student\change_password.html:68 .\templates\student\info.html:25
+#: .\templates\student\onlinetextdisplay.html:30
+#: .\templates\student\user_course.html:28
+msgid "Change Password"
+msgstr "更改密码"
+
+#: .\templates\student\change_password.html:33 .\templates\student\info.html:32
+#: .\templates\student\onlinetextdisplay.html:37
+#: .\templates\student\user_course.html:34
+#: .\templates\student\user_course.html:54
+msgid "Your Courses"
+msgstr "您的课程"
+
+#: .\templates\student\change_password.html:41 .\templates\student\info.html:39
+#: .\templates\student\onlinetextdisplay.html:45
+#: .\templates\student\user_course.html:41
+msgid "Your TestResults"
+msgstr "您的测试结果"
+
+#: .\templates\student\change_password.html:58
+msgid "Current Password "
+msgstr "当前密码"
+
+#: .\templates\student\change_password.html:63
+msgid "New Password"
+msgstr "新密码"
+
+#: .\templates\student\info.html:4 .\templates\student\user_course.html:4
+msgid " -Student Dashboard "
+msgstr "-仪表板"
+
+#: .\templates\student\info.html:49
+msgid "Dashboard"
+msgstr "仪表盘"
+
+#: .\templates\student\info.html:52
+msgid "Share"
+msgstr "分享"
+
+#: .\templates\student\info.html:53
+msgid "Export"
+msgstr "导出"
+
+#: .\templates\student\info.html:64
+msgid "This week"
+msgstr "本周"
+
+#: .\templates\student\onlinetextdisplay.html:4
+msgid "Your OnlineText - "
+msgstr "您的在线文本 -"
+
+#: .\templates\student\onlinetextdisplay.html:4
+msgid "- Student Dashboard"
+msgstr "- 仪表板"
+
+#: .\templates\student\onlinetextdisplay.html:55
+msgid "Your OnlineText"
+msgstr "您的在线文本"
+
+#: .\templates\student\onlinetextdisplay.html:59
+msgid ""
+"Questions that were answered incorrectly in the test will be displayed here."
+msgstr "测试中回答错误的问题将显示在这里。"
+
+#: .\templates\student\onlinetextdisplay.html:65
+msgid "Question"
+msgstr "问题"
+
+#: .\templates\student\onlinetextdisplay.html:67
+msgid "Answer"
+msgstr "回答"
+
+#: .\templates\student\user_course.html:4
+msgid "Your Subscription Courses -"
+msgstr "您的订阅课程 -"
+
+#: .\templates\student\user_course.html:71
+msgid "Continue to Learn"
+msgstr "继续学习"

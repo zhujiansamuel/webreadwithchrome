@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-
-{% block title %}Pricing{% endblock title %}
+{% load i18n %}
+{% block title %}{% translate "Pricing" %}{% endblock title %}
 
 {% block head %}
 {% endblock head %}
@@ -9,8 +9,8 @@
 <div class="container">
     <div class="jumbotron jumbotron-fluid bg-transparent">
         <div class="container text-center">
-            <h1 class="display-4">Subscripe to Premium Courses</h1>
-            <p class="lead">ENJOY PREMIUM CONTENT AT AFFORDABLE PRICE</p>
+            <h1 class="display-4">{% translate "Subscripe to Premium Courses" %}</h1>
+            <p class="lead">{% translate "ENJOY PREMIUM CONTENT AT AFFORDABLE PRICE" %}</p>
         </div>
     </div>
 </div>
@@ -27,11 +27,11 @@
                     <li class="list-group-item"><img src="https://img.icons8.com/android/20/000000/time.png" />
                         {{ course.course_length }}</li>
                     <li class="list-group-item"><img src="https://img.icons8.com/metro/20/000000/price-tag-euro.png" />
-                        ₹ {{ course.course_price }} /-</li>
+                        {% translate "￥" %} {{ course.course_price }} /-</li>
                 </ul>
                 <div class="card-body">
                     <center>
-                        <a href="Courses/{{ course.course_slug }}" class="btn btn-info py-2 my-1">View Course Details</a>
+                        <a href="Courses/{{ course.course_slug }}" class="btn btn-info py-2 my-1">{% translate "View Course Details" %}</a>
                     </center>
                 </div>
             </div>

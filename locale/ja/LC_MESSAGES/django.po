@@ -1,0 +1,461 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-07 23:04+0900\n"
+"PO-Revision-Date: 2020-12-07 23:27+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#: .\startup\settings.py:119 .\templates\onlinetext\onlinetextonhome.html:40
+msgid "English"
+msgstr "英語"
+
+#: .\startup\settings.py:120 .\templates\onlinetext\onlinetextonhome.html:39
+msgid "Japanese"
+msgstr "日本語"
+
+#: .\startup\settings.py:121
+msgid "Chinese"
+msgstr "中国語"
+
+#: .\templates\404.html:3 .\templates\base.html:259
+#: .\templates\login_chrome.html:7 .\templates\onlinetext\testcreater.html:5
+msgid "Back to top"
+msgstr "トップへ戻る"
+
+#: .\templates\404.html:70
+msgid ""
+"Maybe this page moved? Got deleted? Is hiding out in quarantine? Never "
+"existed in the first place?"
+msgstr ""
+"たぶん、このページは移動しましたか?削除されましたか?検疫に隠れていますか?そも"
+"そも存在したことがない?"
+
+#: .\templates\404.html:70
+msgid "Let's go"
+msgstr "行きましょう"
+
+#: .\templates\404.html:70
+msgid "home"
+msgstr "ホーム"
+
+#: .\templates\404.html:70
+msgid "and try from there."
+msgstr "そしてそこから試してみてください。"
+
+#: .\templates\base.html:14
+msgid "-Lying DOWN Learning"
+msgstr "-横になって学習"
+
+#: .\templates\base.html:45 .\templates\onlinetext\onlinetextpost.html:5
+msgid "Lying DOWN Learning"
+msgstr "横になって学習"
+
+#: .\templates\base.html:57
+msgid "My Knowledge"
+msgstr "私の知識"
+
+#: .\templates\base.html:60
+msgid "My Test"
+msgstr "マイテスト"
+
+#: .\templates\base.html:64 .\templates\course\courses.html:4
+msgid "Courses"
+msgstr "コース"
+
+#: .\templates\base.html:67
+msgid "Notification"
+msgstr "通知"
+
+#: .\templates\base.html:79
+msgid "User Account"
+msgstr "ユーザーアカウント"
+
+#: .\templates\base.html:81
+msgid "Logout"
+msgstr "ログアウト"
+
+#: .\templates\base.html:87 .\templates\base.html:143 .\templates\base.html:152
+#: .\templates\base.html:171 .\templates\login_chrome.html:35
+msgid "Login"
+msgstr "ログイン"
+
+#: .\templates\base.html:90 .\templates\base.html:191 .\templates\base.html:200
+#: .\templates\base.html:241
+msgid "Ragister"
+msgstr "登録"
+
+#: .\templates\base.html:96
+msgid "Language"
+msgstr "言語"
+
+#: .\templates\base.html:160 .\templates\base.html:205
+#: .\templates\login_chrome.html:28
+msgid "Username"
+msgstr "ユーザー名"
+
+#: .\templates\base.html:161 .\templates\base.html:206
+msgid "Enter Username"
+msgstr "ユーザー名を入力"
+
+#: .\templates\base.html:167 .\templates\login_chrome.html:32
+msgid "Password"
+msgstr "パスワード"
+
+#: .\templates\base.html:168 .\templates\base.html:233
+msgid "Enter Password"
+msgstr "パスワードを入力"
+
+#: .\templates\base.html:179 .\templates\base.html:247
+msgid "Close"
+msgstr "閉じる"
+
+#: .\templates\base.html:211
+msgid "Email"
+msgstr "メールアドレス"
+
+#: .\templates\base.html:212
+msgid "Enter Email"
+msgstr "メールアドレスを入力"
+
+#: .\templates\base.html:217
+msgid "Mobile No"
+msgstr "携帯電話"
+
+#: .\templates\base.html:218
+msgid "Enter Mobile No 09876543210"
+msgstr "携帯電話を入力してください（09876543210）"
+
+#: .\templates\base.html:222
+msgid "Date of Birth"
+msgstr "生年月日"
+
+#: .\templates\base.html:223
+msgid "Enter Date of Birth"
+msgstr "生年月日を入力"
+
+#: .\templates\base.html:227
+msgid "Address"
+msgstr "住所"
+
+#: .\templates\base.html:228
+msgid "Enter Full Address"
+msgstr "アドレスを入力"
+
+#: .\templates\base.html:232 .\templates\successfulLoginFromChrome.html:23
+msgid "Welcome"
+msgstr "ようこそ"
+
+#: .\templates\base.html:236
+msgid "Password must contain the following:"
+msgstr "パスワードには、次の情報が含まれている必要があります："
+
+#: .\templates\base.html:237
+msgid "lowercase, "
+msgstr "小文字"
+
+#: .\templates\base.html:238
+msgid "capital (uppercase), "
+msgstr "大文字"
+
+#: .\templates\base.html:239
+msgid "number"
+msgstr "ナンバー"
+
+#: .\templates\blog\blog.html:3 .\templates\blog\blog.html:11
+msgid "Notification by Lying DOWN Learning"
+msgstr "横になって学習による通知"
+
+#: .\templates\blog\blog.html:18
+msgid "Read More..."
+msgstr "続きを読む..."
+
+#: .\templates\course\checkout.html:4
+msgid "Checkout"
+msgstr "チェックアウト"
+
+#: .\templates\course\checkout.html:4 .\templates\course\course_detail.html:3
+msgid "Courses Details"
+msgstr "コース詳細"
+
+#: .\templates\course\checkout.html:12
+msgid "Check Out"
+msgstr "チェックアウト"
+
+#: .\templates\course\checkout.html:25 .\templates\course\checkout.html:38
+#: .\templates\course\courses.html:23 .\templates\course\pricing.html:30
+msgid "￥"
+msgstr "￥"
+
+#: .\templates\course\checkout.html:31
+msgid "Your cart"
+msgstr "あなたのカート"
+
+#: .\templates\course\checkout.html:42 .\templates\course\checkout.html:45
+msgid "Continue to checkout"
+msgstr "チェックアウトを続行する"
+
+#: .\templates\course\course_detail.html:22
+#: .\templates\student\user_course.html:66
+msgid "Progress"
+msgstr "進度"
+
+#: .\templates\course\course_detail.html:25
+msgid "SUBSCRIBED"
+msgstr "購読"
+
+#: .\templates\course\course_detail.html:26
+msgid "Subscribe Now"
+msgstr "今すぐ購読する"
+
+#: .\templates\course\courses.html:27 .\templates\course\pricing.html:34
+msgid "View Course Details"
+msgstr "コースの詳細を表示する"
+
+#: .\templates\course\index.html:13
+msgid "Lying DOWNN Learing !"
+msgstr "横になって学習!"
+
+#: .\templates\course\index.html:14
+msgid "Review the marked knowledge by automatically asking questions."
+msgstr "自動的に質問をしてマークされた知識を確認します。"
+
+#: .\templates\course\lecture.html:55
+msgid "Comments: "
+msgstr "コメント: "
+
+#: .\templates\course\lecture.html:62
+msgid "Enter Comment here"
+msgstr "ここにコメントを入力してください"
+
+#: .\templates\course\lecture.html:65
+#: .\templates\onlinetext\displayquiz.html:31
+msgid "Submit"
+msgstr "送信"
+
+#: .\templates\course\pricing.html:3
+msgid "Pricing"
+msgstr "価格"
+
+#: .\templates\course\pricing.html:12
+msgid "Subscripe to Premium Courses"
+msgstr "プレミアムコースへのサブスクライブ"
+
+#: .\templates\course\pricing.html:13
+msgid "ENJOY PREMIUM CONTENT AT AFFORDABLE PRICE"
+msgstr "プレミアムコンテンツを手頃な価格でお楽しみください"
+
+#: .\templates\login_chrome.html:19
+msgid "Log-in"
+msgstr "ログイン"
+
+#: .\templates\onlinetext\displayquiz.html:22
+msgid "Quesion"
+msgstr "問題"
+
+#: .\templates\onlinetext\displayquiz.html:25
+msgid "Please enter the answer here"
+msgstr "ここに答えを入力してください"
+
+#: .\templates\onlinetext\onlinetextonhome.html:5
+#: .\templates\onlinetext\onlinetextonhome.html:65
+msgid "OnlineText"
+msgstr "オンラインテキスト"
+
+#: .\templates\onlinetext\onlinetextonhome.html:23
+msgid "Add paragraphs manually"
+msgstr "手動で追加する"
+
+#: .\templates\onlinetext\onlinetextonhome.html:32
+#: .\templates\onlinetext\onlinetextpost.html:43
+msgid "Title..."
+msgstr "タイトル..."
+
+#: .\templates\onlinetext\onlinetextonhome.html:33
+msgid "Url..."
+msgstr "Url..."
+
+#: .\templates\onlinetext\onlinetextonhome.html:37
+msgid "Language : "
+msgstr "言語："
+
+#: .\templates\onlinetext\onlinetextonhome.html:45
+msgid "Please enter the text to be recorded."
+msgstr "記録するテキストを入力してください。"
+
+#: .\templates\onlinetext\onlinetextonhome.html:48
+#: .\templates\onlinetext\onlinetextpost.html:47
+msgid "Save"
+msgstr "保存"
+
+#: .\templates\onlinetext\onlinetextonhome.html:60
+msgid "Noted text on-line"
+msgstr "メモされたテキストをオンラインで表示"
+
+#: .\templates\onlinetext\onlinetextonhome.html:63
+#: .\templates\student\onlinetextdisplay.html:63
+msgid "Upload at"
+msgstr "アップロード"
+
+#: .\templates\onlinetext\onlinetextonhome.html:66
+#: .\templates\student\onlinetextdisplay.html:66
+msgid "Date"
+msgstr "日付"
+
+#: .\templates\onlinetext\onlinetextonhome.html:68
+#: .\templates\student\onlinetextdisplay.html:68
+msgid "Go to webpage..."
+msgstr "ウェブページに移動..."
+
+#: .\templates\onlinetext\onlinetextpost.html:36
+msgid "Study notes"
+msgstr "学習ノート"
+
+#: .\templates\onlinetext\testcreater.html:15
+msgid "Test setup"
+msgstr "テストのセットアップ"
+
+#: .\templates\onlinetext\testcreater.html:25
+msgid "Number of questions : "
+msgstr "質問数 :"
+
+#: .\templates\onlinetext\testcreater.html:27
+msgid "5 QUESTIONS"
+msgstr "質問5個"
+
+#: .\templates\onlinetext\testcreater.html:28
+msgid "10 QUESTIONS"
+msgstr "質問10個"
+
+#: .\templates\onlinetext\testcreater.html:29
+msgid "15 QUESTIONS"
+msgstr "質問15個"
+
+#: .\templates\onlinetext\testcreater.html:30
+msgid "20 QUESTIONS"
+msgstr "質問20個"
+
+#: .\templates\onlinetext\testcreater.html:34
+msgid "Start Testing"
+msgstr "テストの開始"
+
+#: .\templates\onlinetext\testresult.html:5
+#: .\templates\successfulLoginFromChrome.html:5
+msgid "Login from website"
+msgstr "ウェブサイトからログイン"
+
+#: .\templates\onlinetext\testresult.html:23
+msgid "Test Results"
+msgstr "テスト結果"
+
+#: .\templates\onlinetext\testresult.html:26
+msgid "You can review incorrectly answered questions in the user interface"
+msgstr "ユーザー インターフェイスで、誤った回答の質問を確認できます。"
+
+#: .\templates\student\change_password.html:5
+msgid "Change Password - "
+msgstr "パスワードの変更 -"
+
+#: .\templates\student\change_password.html:5
+msgid " - Student Dashboard "
+msgstr "- 学生ダッシュボード"
+
+#: .\templates\student\change_password.html:19 .\templates\student\info.html:18
+#: .\templates\student\onlinetextdisplay.html:23
+#: .\templates\student\user_course.html:22
+msgid "Profile"
+msgstr "プロフィール"
+
+#: .\templates\student\change_password.html:26
+#: .\templates\student\change_password.html:51
+#: .\templates\student\change_password.html:68 .\templates\student\info.html:25
+#: .\templates\student\onlinetextdisplay.html:30
+#: .\templates\student\user_course.html:28
+msgid "Change Password"
+msgstr "パスワードの変更"
+
+#: .\templates\student\change_password.html:33 .\templates\student\info.html:32
+#: .\templates\student\onlinetextdisplay.html:37
+#: .\templates\student\user_course.html:34
+#: .\templates\student\user_course.html:54
+msgid "Your Courses"
+msgstr "コース"
+
+#: .\templates\student\change_password.html:41 .\templates\student\info.html:39
+#: .\templates\student\onlinetextdisplay.html:45
+#: .\templates\student\user_course.html:41
+msgid "Your TestResults"
+msgstr "テスト結果"
+
+#: .\templates\student\change_password.html:58
+msgid "Current Password "
+msgstr "現在のパスワード"
+
+#: .\templates\student\change_password.html:63
+msgid "New Password"
+msgstr "新しいパスワード"
+
+#: .\templates\student\info.html:4 .\templates\student\user_course.html:4
+msgid " -Student Dashboard "
+msgstr "-学生ダッシュボード"
+
+#: .\templates\student\info.html:49
+msgid "Dashboard"
+msgstr "ダッシュボード"
+
+#: .\templates\student\info.html:52
+msgid "Share"
+msgstr "シェア"
+
+#: .\templates\student\info.html:53
+msgid "Export"
+msgstr "エクスポート"
+
+#: .\templates\student\info.html:64
+msgid "This week"
+msgstr "今週"
+
+#: .\templates\student\onlinetextdisplay.html:4
+msgid "Your OnlineText - "
+msgstr "オンラインテキスト -"
+
+#: .\templates\student\onlinetextdisplay.html:4
+msgid "- Student Dashboard"
+msgstr "- 学生ダッシュボード"
+
+#: .\templates\student\onlinetextdisplay.html:55
+msgid "Your OnlineText"
+msgstr "オンラインテキスト"
+
+#: .\templates\student\onlinetextdisplay.html:59
+msgid ""
+"Questions that were answered incorrectly in the test will be displayed here."
+msgstr "テストで正しく答えなかった質問がここに表示されます。"
+
+#: .\templates\student\onlinetextdisplay.html:65
+msgid "Question"
+msgstr "質問"
+
+#: .\templates\student\onlinetextdisplay.html:67
+msgid "Answer"
+msgstr "回答"
+
+#: .\templates\student\user_course.html:4
+msgid "Your Subscription Courses -"
+msgstr "サブスクリプションコース -"
+
+#: .\templates\student\user_course.html:71
+msgid "Continue to Learn"
+msgstr "学習を続ける"
